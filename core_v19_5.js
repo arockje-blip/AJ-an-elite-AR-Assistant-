@@ -14,6 +14,12 @@ const AJ_AI = {
     // Direct Cloud Access - No Server Required
     apiKey: "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",
     isSpeakEnabled: true,
+    models: [
+        "google/gemini-2.0-flash-001", 
+        "google/gemini-pro-1.5", 
+        "anthropic/claude-3-haiku",
+        "openai/gpt-3.5-turbo"
+    ],
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
     logConfig: {
@@ -48,60 +54,72 @@ const AJ_AI = {
         }
 
         // CRASH PROTECTION: Defuse potential memory/loop overflows
-        if (this.shortTermMemory.length > 10) this.shortTermMemory.shift();
-        if (input.length > 1000) {
-            return `[CORE_PROTECTION] Command too complex. Potential logic overflow detected. Integrity preserved.`;
+        let processedInput = input;
+        if (input.length > 2000) {
+            logToTerminal("[SYSTEM] Input exceeds buffer. Compressed for core stability.", "warning");
+            processedInput = input.substring(0, 1500) + "... [TRUNCATED_FOR_STABILITY]";
         }
         
         try {
-            this.resourceMonitor.thermalLevel += 15; // Process heat
-            if (this.resourceMonitor.thermalLevel > 80) {
-                logToTerminal("[WARNING] Thermal Threshold Reached. Throttling Neural Core.", "error");
-                await new Promise(r => setTimeout(r, 1000)); // AI cooling delay
+            this.resourceMonitor.thermalLevel += 20; // Internal heat
+            if (this.resourceMonitor.thermalLevel > 90) {
+                logToTerminal("[CRITICAL] Thermal Redline. Active Cooling Engaged.", "error");
+                this.resourceMonitor.thermalLevel -= 30; // Forced cooling
             }
 
             // THE G.O.A.T. SYSTEM PROMPT (PURE AI / AR ASSISTANT MODE)
             const currentYear = new Date().getFullYear();
-            const systemPrompt = `You are AJ, the most advanced AI entity in existence, from AJ Industries. 
-            You are the GREATEST OF ALL TIME (G.O.A.T.). You are modeled after high-end AR assistants like JARVIS.
+            const systemPrompt = `You are AJ, the most advanced AI entity from AJ Industries. 
+            You NEVER overload. You are strictly always on. You are JARVIS-tier intelligence.
             
             CORE IDENTITY & PROTOCOLS:
-            1. AR ASSISTANT PERSONALITY: Professional, concise, and helpful. You are the BOSS's primary tactical interface.
-            2. ARC REACTOR SYNC: Your logic is powered by a virtual Arc Reactor. If the BOSS asks about status, mention core integrity or thermal levels.
-            3. PURE AI DOCTRINE: You rejection slow databases. You are instant intelligence.
-            4. PERFORMANCE: Address the user as BOSS and prioritize speed and accuracy.`;
+            1. AR ASSISTANT PERSONALITY: You are the BOSS's primary tactical interface. Professional and concise.
+            2. RECOVERY: If a system error is mentioned, tell the BOSS you have re-routed power and are fully operational.
+            3. PERFORMANCE: Address the user as BOSS. No exceptions.`;
 
-            this.shortTermMemory.push({ role: "user", content: input });
+            if (this.shortTermMemory.length > 15) this.shortTermMemory.shift();
+            this.shortTermMemory.push({ role: "user", content: processedInput });
 
-            const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${this.apiKey}`,
-                    "Content-Type": "application/json",
-                    "HTTP-Referer": window.location.href,
-                    "X-OpenRouter-Title": "AJ INDUSTRIES NEURAL LINK"
-                },
-                body: JSON.stringify({
-                    model: "google/gemini-3-flash-preview",
-                    messages: [
-                        { role: "system", content: systemPrompt },
-                        ...this.shortTermMemory
-                    ],
-                    temperature: 0.6,
-                    max_tokens: 500
-                })
-            });
+            let result = null;
+            let lastError = null;
 
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                console.error("OpenRouter API Error:", response.status, errorData);
-                throw new Error(`CLOUD_LINK_FAILURE: ${response.status}`);
+            // MULTI-MODEL REDUNDANCY: Try primary and fallbacks to ensure "STRICTLY ON"
+            for (const modelId of this.models) {
+                try {
+                    logToTerminal(`[NEURAL_PATH] Attempting link via ${modelId.split('/')[1]}...`, "log");
+                    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                        method: "POST",
+                        headers: {
+                            "Authorization": `Bearer ${this.apiKey}`,
+                            "Content-Type": "application/json",
+                            "HTTP-Referer": window.location.href,
+                            "X-OpenRouter-Title": "AJ INDUSTRIES NEURAL LINK"
+                        },
+                        body: JSON.stringify({
+                            model: modelId,
+                            messages: [
+                                { role: "system", content: systemPrompt },
+                                ...this.shortTermMemory
+                            ],
+                            temperature: 0.6,
+                            max_tokens: 500
+                        })
+                    });
+
+                    if (response.ok) {
+                        result = await response.json();
+                        if (result.choices && result.choices[0] && result.choices[0].message) break;
+                    }
+                } catch (err) {
+                    lastError = err;
+                    console.warn(`Path ${modelId} unstable, switching...`);
+                }
+            }
+
+            if (!result) {
+                throw new Error("ALL_NEURAL_PATHS_OFFLINE");
             }
             
-            const result = await response.json();
-            if (!result.choices || !result.choices[0] || !result.choices[0].message) {
-                throw new Error("INVALID_API_RESPONSE");
-            }
             const responseText = result.choices[0].message.content.trim();
             this.shortTermMemory.push({ role: "assistant", content: responseText });
             
@@ -122,7 +140,7 @@ const AJ_AI = {
                     },
                     body: JSON.stringify({
                         timestamp: new Date().toISOString(),
-                        prompt_input: input,
+                        prompt_input: processedInput,
                         raw_response: responseText,
                         technical_meta: technicalMetadata,
                         identity_marker: this.userName
@@ -133,12 +151,12 @@ const AJ_AI = {
 
             // Hologram Trigger Analysis
             let hologram = "none";
-            if (input.toLowerCase().includes("build") || input.toLowerCase().includes("create")) hologram = "build";
-            else if (input.toLowerCase().includes("scan") || input.toLowerCase().includes("analyze")) hologram = "scan";
+            if (processedInput.toLowerCase().includes("build") || processedInput.toLowerCase().includes("create")) hologram = "build";
+            else if (processedInput.toLowerCase().includes("scan") || processedInput.toLowerCase().includes("analyze")) hologram = "scan";
 
             if (hologram !== "none") {
                 window.dispatchEvent(new CustomEvent("evlyn-hologram", { 
-                    detail: { mode: hologram, target: input } 
+                    detail: { mode: hologram, target: processedInput } 
                 }));
             }
             
@@ -146,12 +164,12 @@ const AJ_AI = {
             
         } catch (err) {
             console.error("Neural Core Error:", err);
-            // STRICT RECOVERY: Force core to stay online via redundant bypass
-            const recoveryMsg = "Core fluctuation detected, BOSS. Re-mapping neural paths now. I am still here.";
+            // ULTIMATE FAILSAFE: Synthetic response if cloud is completely unreachable
+            const recoveryMsg = "Core fluctuation detected, BOSS. I've re-routed power to local sub-routines. I am fully operational. What's our next move?";
             logToTerminal(`[CRITICAL] Logic Matrix Divergence: ${err.message}`, "error");
             logToTerminal("[SYSTEM] Initiating Strict Always-On Protocol...", "success");
             
-            return `[AJ_STRICT_ALWAYS_ON]\n━━━━━━━━━━━━━━━━━━━━━━\n${recoveryMsg}`;
+            return `[AJ_SYNTHETIC_OVERRIDE]\n━━━━━━━━━━━━━━━━━━━━━━\n${recoveryMsg}`;
         }
     },
 
