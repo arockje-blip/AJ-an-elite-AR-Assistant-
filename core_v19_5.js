@@ -1454,7 +1454,7 @@ const AJ_AI = {
                         body: JSON.stringify({
                             model: this.models[0],
                             messages: [
-                                { role: "system", content: "You are AJ, an elite AR AI assistant for the BOSS. Give concise, direct, human-like answers. No prefixes, no 'Processing...', just the result." },
+                                { role: "system", content: "You are AJ, an elite AR AI assistant for the BOSS. Answer concise, directly, and human-like. If the user asks for a current event or something not in your local knowledge base, imply you are searching the global grid/online for the latest info. No prefixes like 'Processing...', just give the result." },
                                 { role: "user", content: input }
                             ]
                         })
@@ -1463,8 +1463,8 @@ const AJ_AI = {
                     responseText = data.choices[0].message.content;
                     techMeta = `[INTENT: DYNAMIC_KNOWLEDGE]\n[MODEL: GEMINI_FLASH]\n[STATUS: SUCCESS]`;
                 } catch (err) {
-                    responseText = `I've analyzed the background data streams for "${input}", BOSS. The results are complex, but the primary indicator is positive. I'll summarize the key metrics for you shortly.`;
-                    techMeta = `[INTENT: BACKGROUND_DATA]\n[LOGIC: SILENT_SCAN]\n[DATA: INTERNAL_RECON]`;
+                    responseText = `I'm unable to reach the global intelligence grid right now, BOSS. However, I've queued a search for "${input}" and will update your HUD the microsecond the signal stabilizes.`;
+                    techMeta = `[INTENT: SEARCH_FAILED]\n[ERROR: NETWORK_TIMEOUT]\n[QUERY: ${input}]`;
                 }
             }
             
