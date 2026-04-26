@@ -63,9 +63,9 @@ const AJ_AI = {
                 
                 logToTerminal("[AJ_BRAIN] Executing Native Greetings Protocol", "success");
                 const greetings = [
-                    "Hello BOSS. Systems are at 100%. How can I assist you today?",
-                    "At your service, BOSS. All databases are synced and ready.",
-                    "AJ online. Sovereign logic core is stable. I'm ready for your instructions."
+                    "Hello BOSS. I'm fully operational and at your service. How can I help you today?",
+                    "Hello there! All systems are stable. What's on your mind, BOSS?",
+                    "Greetings, BOSS. I'm online and ready for anything you need."
                 ];
                 responseText = greetings[Math.floor(Math.random() * greetings.length)];
                 techMeta = "[INTENT: GREETING]\n[LOGIC: NATIVE]\n[STATUS: STABILITY_MAX]";
@@ -77,7 +77,7 @@ const AJ_AI = {
                 // Open Global Intelligence Link for Accurate Answers
                 window.open(`https://www.google.com/search?q=${encodeURIComponent(input)}+AI+Overview+full+data`, '_blank');
                 
-                responseText = `I have initiated a global scan across all databases and websites to provide the most accurate intelligence on "${input}", BOSS. The results are populating in the holographic uplink now.`;
+                responseText = `I've scanned the global databases for you, BOSS. It looks like "${input}" refers to the latest data I'm pulling up in your holographic display right now. Take a look.`;
                 techMeta = `[INTENT: ACCURATE_QUERY]\n[LOGIC: GLOBAL_SCAN]\n[DATA: DATABASE_WEBSITE_LINK]`;
             }
             
@@ -108,10 +108,11 @@ const AJ_AI = {
                     });
             } catch(e) {}
 
-            return `[AJ_HYBRID_CORE]\n━━━━━━━━━━━━━━━━━━━━━━\n${responseText}`;
+            // RETURN ONLY THE PURE ANSWER - NO METADATA PROSSESSING
+            return `━━━━━━━━━━━━━━━━━━━━━━\n${responseText}`;
             
         } catch (err) {
-            return `[JARVIS_STABLE]\n━━━━━━━━━━━━━━━━━━━━━━\nLogic Constant. I am always on, BOSS.`;
+            return `━━━━━━━━━━━━━━━━━━━━━━\nLogic Constant. I am always on, BOSS.`;
         }
     },
 
@@ -133,17 +134,18 @@ const AJ_AI = {
 
                 const utterance = new SpeechSynthesisUtterance(cleanText);
                 
-                // Human-like Speech Metrics
-                utterance.rate = 0.9;  // REDESIGN: 0.9x speed for authoritative, clear human pacing
-                utterance.pitch = 1.1;  // Slightly higher for Zira/Eva clarity
+                // Human-like Speech Metrics (JARVIS TONE)
+                utterance.rate = 1.0;   // Natural human pace
+                utterance.pitch = 1.0;  // Balanced pitch
                 utterance.volume = 1.0;
                 
-                // Select Microsoft Zira or Eva for that professional AR Assistant tone
+                // Natural Pausing Logic
                 const voices = window.speechSynthesis.getVoices();
                 const preferredVoice = voices.find(v => 
-                    v.name.includes("Zira") || 
-                    v.name.includes("Eva") || 
-                    v.name.includes("Natural")
+                    v.name.includes("Natural") || 
+                    v.name.includes("Aria") || 
+                    v.name.includes("Guy") ||
+                    v.name.includes("Zira")
                 ) || voices[0];
                 
                 if (preferredVoice) utterance.voice = preferredVoice;
