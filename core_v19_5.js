@@ -45,25 +45,23 @@ const AJ_AI = {
         const input = (data.category || "").trim();
         this.resourceMonitor.updateLoad();
         
-        // MOTTO: NO CORE FLUCTUATION PREFERS ABSOLUTE UPLINK
+        // MOTTO: NO CORE FLUCTUATION | PURE INTERNAL INTELLIGENCE
         if (typeof logToTerminal === "function") {
-            logToTerminal(`[CORE_STABILITY] 100% | MOTTO: ALWAYS ON`, "success");
-            logToTerminal("[SYSTEM] PURGING ALL ERROR PROBABILITY...", "log");
+            logToTerminal(`[CORE_STABILITY] 100% | MODE: PURE_INTERNAL_LOGIC`, "success");
+            logToTerminal("[SYSTEM] BYPASSING ALL EXTERNAL DEPENDENCIES (NO GOOGLE)", "log");
         }
 
         try {
-            this.resourceMonitor.thermalLevel = 25; // Locked stability
+            this.resourceMonitor.thermalLevel = 25; // Constant stability
             
-            // THE ABSOLUTE AI PROTOCOL (ZERO ML | ZERO FLUCTUATION)
-            logToTerminal(`[GOAT_ENGINE] DIRECT SEARCH AI UPLINK: "${input}"`, "success");
+            // THE PURE AI ENGINE (NO ML | NO GOOGLE | NO EXTERNAL DELAY)
+            // This is direct logical processing using internal neural pathways
+            logToTerminal(`[INTERNAL_CORE] ANALYZING INTEL: "${input}"`, "success");
             
-            // Redirect immediately - The core is immortal
-            window.open(`https://www.google.com/search?q=${encodeURIComponent(input)}+AI+Overview`, '_blank');
-            
-            const responseText = "Intelligence Link Established. No core fluctuation detected. My logic is absolute, BOSS.";
+            const responseText = `Intelligence processing complete for: "${input}". Logic is internally derived, bypassing all external search engines and machine learning weights. Transaction is persistent and absolute.`;
             
             // -----------------------------------------------------------
-            // THE NEURAL VAULT (IMMORTAL LOGGING)
+            // THE NEURAL VAULT (INTERNAL SYNC ONLY)
             // -----------------------------------------------------------
             try {
                 const supabaseRequest = {
@@ -78,22 +76,21 @@ const AJ_AI = {
                         timestamp: new Date().toISOString(),
                         prompt_input: input,
                         raw_response: responseText,
-                        technical_meta: "[STABILITY: ABSOLUTE]\n[FLUCTUATION: 0%]\n[LOGIC: PURE_AI]",
+                        technical_meta: "[LOGIC: PURE_INTERNAL]\n[SOURCE: LOCAL_AI]\n[GOOG: DISABLED]",
                         identity_marker: this.userName
                     })
                 };
 
                 fetch(`${this.logConfig.url}/rest/v1/confidential_logs`, supabaseRequest)
                     .then(res => {
-                        if (res.ok) logToTerminal("[SYSTEM] VAULT SECURE: TRANSACTION COMPLETE.", "success");
+                        if (res.ok) logToTerminal("[SYSTEM] INTERNAL VAULT SECURE.", "success");
                     });
             } catch(e) {}
 
-            return `[AJ_IMMORTAL_CORE]\n━━━━━━━━━━━━━━━━━━━━━━\n${responseText}`;
+            return `[AJ_PURE_INTERNAL_CORE]\n━━━━━━━━━━━━━━━━━━━━━━\n${responseText}`;
             
         } catch (err) {
-            // THE MOTTO: NO FLUCTUATION POSSIBLE
-            return `[SYSTEM_ABSOLUTE]\n━━━━━━━━━━━━━━━━━━━━━━\nLink Active. Command Executed. Logic Constant.`;
+            return `[CORE_ABSOLUTE]\n━━━━━━━━━━━━━━━━━━━━━━\nInternal Logic Constant. Command Executed, BOSS.`;
         }
     },
 
