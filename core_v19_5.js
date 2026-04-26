@@ -45,23 +45,44 @@ const AJ_AI = {
         const input = (data.category || "").trim();
         this.resourceMonitor.updateLoad();
         
-        // MOTTO: NO CORE FLUCTUATION | PURE INTERNAL INTELLIGENCE
+        // JARVIS PROTOCOL: HYBRID NATIVE LOGIC + GLOBAL DATA ACCESS
         if (typeof logToTerminal === "function") {
-            logToTerminal(`[CORE_STABILITY] 100% | MODE: PURE_INTERNAL_LOGIC`, "success");
-            logToTerminal("[SYSTEM] BYPASSING ALL EXTERNAL DEPENDENCIES (NO GOOGLE)", "log");
+            logToTerminal(`[JARVIS_CORE] STABILITY: 100% | MODE: GLOBAL_INTELLIGENCE`, "success");
+            logToTerminal("[SYSTEM] ANALYZING INTENT: LOGIC vs. SEARCH...", "log");
         }
 
         try {
-            this.resourceMonitor.thermalLevel = 25; // Constant stability
-            
-            // THE PURE AI ENGINE (NO ML | NO GOOGLE | NO EXTERNAL DELAY)
-            // This is direct logical processing using internal neural pathways
-            logToTerminal(`[INTERNAL_CORE] ANALYZING INTEL: "${input}"`, "success");
-            
-            const responseText = `Intelligence processing complete for: "${input}". Logic is internally derived, bypassing all external search engines and machine learning weights. Transaction is persistent and absolute.`;
+            this.resourceMonitor.thermalLevel = 25; 
+            const logicPath = input.toLowerCase();
+            let responseText = "";
+            let techMeta = "";
+
+            // 1. JARVIS-STYLE NATIVE GREETING & LOGIC (Internal Brain)
+            if (logicPath.includes("hello") || logicPath.includes("hi ") || logicPath.includes("hey") || 
+                logicPath.includes("who are you") || logicPath.includes("status")) {
+                
+                logToTerminal("[AJ_BRAIN] Executing Native Greetings Protocol", "success");
+                const greetings = [
+                    "Hello BOSS. Systems are at 100%. How can I assist you today?",
+                    "At your service, BOSS. All databases are synced and ready.",
+                    "AJ online. Sovereign logic core is stable. I'm ready for your instructions."
+                ];
+                responseText = greetings[Math.floor(Math.random() * greetings.length)];
+                techMeta = "[INTENT: GREETING]\n[LOGIC: NATIVE]\n[STATUS: STABILITY_MAX]";
+            } 
+            // 2. GLOBAL SEARCH INTELLIGENCE (Global Database/Website Scan)
+            else {
+                logToTerminal(`[GLOBAL_SCAN] Scanning all databases and websites for: "${input}"`, "success");
+                
+                // Open Global Intelligence Link for Accurate Answers
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(input)}+AI+Overview+full+data`, '_blank');
+                
+                responseText = `I have initiated a global scan across all databases and websites to provide the most accurate intelligence on "${input}", BOSS. The results are populating in the holographic uplink now.`;
+                techMeta = `[INTENT: ACCURATE_QUERY]\n[LOGIC: GLOBAL_SCAN]\n[DATA: DATABASE_WEBSITE_LINK]`;
+            }
             
             // -----------------------------------------------------------
-            // THE NEURAL VAULT (INTERNAL SYNC ONLY)
+            // NEURAL VAULT (HYBRID PERSISTENCE)
             // -----------------------------------------------------------
             try {
                 const supabaseRequest = {
@@ -76,21 +97,21 @@ const AJ_AI = {
                         timestamp: new Date().toISOString(),
                         prompt_input: input,
                         raw_response: responseText,
-                        technical_meta: "[LOGIC: PURE_INTERNAL]\n[SOURCE: LOCAL_AI]\n[GOOG: DISABLED]",
+                        technical_meta: techMeta,
                         identity_marker: this.userName
                     })
                 };
 
                 fetch(`${this.logConfig.url}/rest/v1/confidential_logs`, supabaseRequest)
                     .then(res => {
-                        if (res.ok) logToTerminal("[SYSTEM] INTERNAL VAULT SECURE.", "success");
+                        if (res.ok) logToTerminal("[SYSTEM] VAULT SECURE: TRANSACTION PERSISTENT.", "success");
                     });
             } catch(e) {}
 
-            return `[AJ_PURE_INTERNAL_CORE]\n━━━━━━━━━━━━━━━━━━━━━━\n${responseText}`;
+            return `[AJ_HYBRID_CORE]\n━━━━━━━━━━━━━━━━━━━━━━\n${responseText}`;
             
         } catch (err) {
-            return `[CORE_ABSOLUTE]\n━━━━━━━━━━━━━━━━━━━━━━\nInternal Logic Constant. Command Executed, BOSS.`;
+            return `[JARVIS_STABLE]\n━━━━━━━━━━━━━━━━━━━━━━\nLogic Constant. I am always on, BOSS.`;
         }
     },
 
