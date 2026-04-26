@@ -11,18 +11,20 @@ const AJ_AI = {
     company: "AJ Industries",
     userName: "BOSS",
     motto: "NO DATABASE | NO ML | PURE AI", // PURE RELIANCE ON WORLD-CLASS AI
-    // Direct Cloud Access - No Server Required
-    apiKey: "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",
+    // Direct Cloud Access - NVIDIA NIM Elite Intelligence (Free Tier)
+    apiKey: "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", 
     isSpeakEnabled: true,
     models: [
-        "google/gemini-2.0-flash-exp:free"
+        "meta/llama-3.3-70b-instruct",
+        "nvidia/llama-3.1-nemotron-70b-instruct",
+        "mistralai/mixtral-8x7b-instruct-v0.1"
     ],
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
     logConfig: {
         url: "https://otapitwycmotvkxrjsbh.supabase.co", 
         key: "sb_publishable_7crrx-zCvEM-BK9SzWkWgw_wlWgZnEL",
-        secret: "sb_secret_UGyuOXD_F0aGDMe76DJ2VA_xNMjgi0g"
+        secret: "sb_secret_W45zE_XhtS3X95QKUmfQag_hPEcwyeR"
     },
 
     shortTermMemory: [],
@@ -1440,38 +1442,56 @@ const AJ_AI = {
             } 
             // 2. SEARCH & DYNAMIC INTELLIGENCE (Everything Else)
             else {
-                logToTerminal(`[DYNAMIC_SEARCH] Connection established. Querying grid...`, "success");
+                logToTerminal(`[DYNAMIC_SEARCH] Connection established. Querying NVIDIA NIM Grid...`, "success");
                 
                 try {
-                    // API Call to OpenRouter for general knowledge if logic library misses
-                    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                        method: "POST",
-                        headers: {
-                            "Authorization": `Bearer ${this.apiKey}`,
-                            "HTTP-Referer": "https://aj-industries.vercel.app",
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            model: "google/gemini-2.0-flash-exp:free",
-                            messages: [
-                                { role: "system", content: "You are AJ, an elite AR AI assistant. Provide a direct, factual answer for the user's query. If you need to search for live sports scores like CSK, act as if you are retrieving live data and give the result. No conversational filler." },
-                                { role: "user", content: input }
-                            ]
-                        })
-                    });
+                    // NVIDIA NIM PROTOCOL: HIGH-PERFORMANCE INFERENCE
+                    const models = [
+                        "meta/llama-3.3-70b-instruct",
+                        "nvidia/llama-3.1-nemotron-70b-instruct",
+                        "mistralai/mixtral-8x7b-instruct-v0.1"
+                    ];
                     
-                    const resultData = await res.json();
-                    
-                    if (resultData && resultData.choices && resultData.choices[0]) {
-                        responseText = resultData.choices[0].message.content;
-                        techMeta = `[INTENT: AI_REALTIME]\n[MODEL: GEMINI_2.0_SOVEREIGN]\n[STATUS: SUCCESS]`;
-                    } else {
-                        throw new Error("Invalid API Response Structure");
+                    let success = false;
+                    for (const model of models) {
+                        try {
+                            const res = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+                                method: "POST",
+                                headers: {
+                                    "Authorization": `Bearer ${this.apiKey}`,
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({
+                                    model: model,
+                                    messages: [
+                                        { role: "system", content: "You are AJ, an elite AR AI assistant. Provide a direct, factual answer for the user's query. Give the result only with no conversational filler." },
+                                        { role: "user", content: input }
+                                    ],
+                                    temperature: 0.2,
+                                    top_p: 0.7,
+                                    max_tokens: 1024
+                                })
+                            });
+                            
+                            const resultData = await res.json();
+                            if (resultData && resultData.choices && resultData.choices[0]) {
+                                responseText = resultData.choices[0].message.content;
+                                techMeta = `[INTENT: AI_REALTIME]\n[MODEL: NVIDIA_${model.toUpperCase()}]\n[STATUS: SUCCESS]`;
+                                success = true;
+                                break; 
+                            }
+                        } catch (e) {
+                            console.warn(`[NVIDIA_FAILOVER] Model ${model} failed. Trying next...`);
+                        }
                     }
+
+                    if (!success) throw new Error("NVIDIA_GRID_OFFLINE");
+                    
                 } catch (err) {
                     console.error("AJ_AI_ERROR:", err);
-                    responseText = `I've analyzed the background data streams for "${input}", BOSS. The results are complex, but the primary indicator is positive. I'll summarize the key metrics for you shortly.`;
-                    techMeta = `[INTENT: ML_FALLBACK]\n[REASON: AI_CONNECTION_ERROR]\n[DATA: INTERNAL_RECON]`;
+                    // AI IS THE ONLY WAY - NO HARDCODED ML FALLBACKS FOR GENERAL KNOWLEDGE
+                    responseText = `NVIDIA_GRID_ERROR: I'm unable to reach the neural cluster, BOSS. Checking secondary NVIDIA nodes now...`;
+                    techMeta = `[INTENT: AI_ONLY]\n[STATUS: ERROR]\n[REASON: CONNECTION_LOST]`;
                 }
             }
             
