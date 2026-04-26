@@ -15,9 +15,9 @@ const AJ_AI = {
     apiKey: "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",
     isSpeakEnabled: true,
     models: [
-        "tencent/hy3-preview:free",
-        "inclusionai/ling-2.6-1t:free",
-        "nvidia/nemotron-3-super-120b-a12b:free"
+        "google/gemini-2.0-flash-lite-preview-02-05:free",
+        "deepseek/deepseek-chat:free",
+        "qwen/qwen-2.5-72b-instruct:free"
     ],
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
@@ -93,7 +93,9 @@ const AJ_AI = {
                         method: "POST",
                         headers: {
                             "Authorization": `Bearer ${this.apiKey.trim()}`,
-                            "Content-Type": "application/json"
+                            "Content-Type": "application/json",
+                            "HTTP-Referer": "https://vercel.com",
+                            "X-OpenRouter-Title": "AJ_INDUSTRIES_HUD"
                         },
                         body: JSON.stringify({
                             model: modelId,
@@ -102,7 +104,8 @@ const AJ_AI = {
                                 ...this.shortTermMemory
                             ],
                             temperature: 0.8,
-                            max_tokens: 1000 // FULL TOKEN UTILIZATION
+                            max_tokens: 1000,
+                            repetition_penalty: 1.1
                         })
                     });
 
