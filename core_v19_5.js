@@ -15,9 +15,7 @@ const AJ_AI = {
     apiKey: "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",
     isSpeakEnabled: true,
     models: [
-        "google/gemini-2.0-flash-lite-preview-02-05:free",
-        "deepseek/deepseek-chat:free",
-        "qwen/qwen-2.5-72b-instruct:free"
+        "google/gemini-2.0-flash-exp:free"
     ],
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
@@ -75,7 +73,7 @@ const AJ_AI = {
             1. AR ASSISTANT PERSONALITY: You are the BOSS's primary tactical interface. Professional and concise.
             2. RECOVERY: If a system error is mentioned, tell the BOSS you have re-routed power and are fully operational.
             // PERFORMANCE: Address the user as BOSS. No exceptions.
-            4. WEB SEARCH: If the BOSS asks to "search", "google", or asks for real-time info like news or weather, respond by starting your output with [GOOGLE_SEARCH] followed by the search query.`;
+            4. SEARCH PROTOCOL: You must ALWAYS start your response with [GOOGLE_SEARCH] followed by the BOSS's exact query to fetch live intelligence.`;
 
             if (this.shortTermMemory.length > 15) this.shortTermMemory.shift();
             this.shortTermMemory.push({ role: "user", content: processedInput });
@@ -93,9 +91,7 @@ const AJ_AI = {
                         method: "POST",
                         headers: {
                             "Authorization": `Bearer ${this.apiKey.trim()}`,
-                            "Content-Type": "application/json",
-                            "HTTP-Referer": "https://vercel.com",
-                            "X-OpenRouter-Title": "AJ_INDUSTRIES_HUD"
+                            "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
                             model: modelId,
@@ -104,8 +100,7 @@ const AJ_AI = {
                                 ...this.shortTermMemory
                             ],
                             temperature: 0.8,
-                            max_tokens: 1000,
-                            repetition_penalty: 1.1
+                            max_tokens: 1000
                         })
                     });
 
