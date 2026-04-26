@@ -857,13 +857,23 @@
     <script src="core_v19_5.js"></script>
     
     <script>
-        // CRITICAL SYNC: Ensure global exposure immediately on load
+        // Check if AJ_AI is available after core script loads
         if (typeof AJ_AI !== 'undefined') {
             window.AJ_AI = AJ_AI;
+            console.log("[INFRASTRUCTURE] AJ Neural Core detected.");
         }
+    </script>
+    
+    <script>
+        // CRITICAL SYNC: Ensure global exposure
+        window.addEventListener('load', () => {
+            if (typeof AJ_AI !== 'undefined') {
+                window.AJ_AI = AJ_AI;
+            }
+        });
 
         // Ensure AJ_AI is detected again on full load
-        window.addEventListener('load', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             if (typeof AJ_AI !== 'undefined') {
                 window.AJ_AI = AJ_AI;
             }
@@ -1408,12 +1418,13 @@
             
             // System initialization check
             setTimeout(() => {
-                if (window.AJ_AI) {
+                if (window.AJ_AI || typeof AJ_AI !== 'undefined') {
+                    if (typeof AJ_AI !== 'undefined') window.AJ_AI = AJ_AI;
                     logToTerminal('[SYSTEM] AJ Core initialized successfully', 'success');
                 } else {
                     logToTerminal('[CRITICAL] Neural Link Failed: AJ_AI not defined', 'error');
                 }
-            }, 500);
+            }, 1000);
         });
         
         // ===== COMMAND EXECUTOR =====

@@ -1256,8 +1256,7 @@ const AJ_AI = {
             "My code is clean, responsive, and 100% optimized.",
             "I'm the only developer you'll ever need, BOSS.",
             "Let's build a new digital empire. Starting with the homepage."
-        ][Math.floor(Math.random() * 10)]
-    },    },
+        ][Math.floor(Math.random() * 10)],
         "i am back": () => [
             "Welcome back, BOSS. Systems are already at 100% for you.",
             "Glad you're back. I've prepared some data since you left.",
