@@ -1277,8 +1277,10 @@
             window.speechSynthesis.getVoices();
         }
 
-        if ('webkitSpeechRecognition' in window) {
-            recognition = new webkitSpeechRecognition();
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
             recognition.continuous = true;
             recognition.interimResults = true;
             recognition.lang = 'en-US';
@@ -1298,7 +1300,7 @@
                 }
                 
                 if (finalTranscript) {
-                    arcReactor.classList.remove('listening');
+                    // Don't remove listening immediately if continuous
                     document.getElementById('neural-prompt').value = finalTranscript;
                     logToTerminal(`[INPUT] "${finalTranscript}"`, 'log');
                     drawWaveform();
@@ -1307,10 +1309,8 @@
             };
             
             recognition.onerror = (event) => {
-                if (event.error !== 'no-speech') {
-                    logToTerminal(`[ERROR] Voice: ${event.error}`, 'error');
-                }
-                if (isPersistent && event.error === 'no-speech') {
+                logToTerminal(`[ERROR] Voice: ${event.error}`, 'error');
+                if (isPersistent && (event.error === 'no-speech' || event.error === 'aborted')) {
                     setTimeout(() => {
                         try { recognition.start(); } catch(e) {}
                     }, 500);
