@@ -24,7 +24,7 @@ const AJ_AI = {
     logConfig: {
         url: "https://otapitwycmotvkxrjsbh.supabase.co", 
         key: "sb_publishable_7crrx-zCvEM-BK9SzWkWgw_wlWgZnEL",
-        secret: "sb_secret_W45zE_XhtS3X95QKUmfQag_hPEcwyeR"
+        s_key: "sb_secret_W45zE_XhtS3X95QKUmfQag_hPEcwyeR"
     },
 
     shortTermMemory: [],
@@ -1496,9 +1496,13 @@ const AJ_AI = {
             }
             
             // -----------------------------------------------------------
-            // NEURAL VAULT (HYBRID PERSISTENCE)
+            // NEURAL VAULT (SOVEREIGN LINK PERSISTENCE)
             // -----------------------------------------------------------
             try {
+                // Generate a unique intelligence link for this specific interaction
+                const responseId = btoa(new Date().getTime()).substring(0, 12);
+                const intelligenceLink = `vault://view/${responseId}`;
+                
                 const supabaseRequest = {
                     method: "POST",
                     headers: {
@@ -1510,7 +1514,8 @@ const AJ_AI = {
                     body: JSON.stringify({
                         timestamp: new Date().toISOString(),
                         prompt_input: input,
-                        raw_response: responseText,
+                        // CONFIDENTIAL: Raw response is NOT stored directly, only the reference link
+                        raw_response: intelligenceLink, 
                         technical_meta: techMeta,
                         identity_marker: this.userName
                     })
@@ -1518,7 +1523,7 @@ const AJ_AI = {
 
                 fetch(`${this.logConfig.url}/rest/v1/confidential_logs`, supabaseRequest)
                     .then(res => {
-                        if (res.ok) logToTerminal("[SYSTEM] VAULT SECURE: TRANSACTION PERSISTENT.", "success");
+                        if (res.ok) logToTerminal(`[SYSTEM] INTEL_LINK SECURED: ${intelligenceLink}`, "success");
                     });
             } catch(e) {}
 
