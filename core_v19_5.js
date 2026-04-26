@@ -15,10 +15,10 @@ const AJ_AI = {
     apiKey: "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",
     isSpeakEnabled: true,
     models: [
-        "google/gemini-2.0-flash-001", 
-        "google/gemini-pro-1.5", 
-        "anthropic/claude-3-haiku",
-        "openai/gpt-3.5-turbo"
+        "google/gemini-2.0-flash-lite-preview-02-05:free",
+        "google/gemini-2.0-pro-exp-02-05:free",
+        "deepseek/deepseek-chat:free",
+        "qwen/qwen-2.5-72b-instruct:free"
     ],
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
@@ -91,9 +91,7 @@ const AJ_AI = {
                         method: "POST",
                         headers: {
                             "Authorization": `Bearer ${this.apiKey}`,
-                            "Content-Type": "application/json",
-                            "HTTP-Referer": window.location.href,
-                            "X-OpenRouter-Title": "AJ INDUSTRIES NEURAL LINK"
+                            "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
                             model: modelId,
@@ -109,15 +107,18 @@ const AJ_AI = {
                     if (response.ok) {
                         result = await response.json();
                         if (result.choices && result.choices[0] && result.choices[0].message) break;
+                    } else {
+                        const errorDetails = await response.text();
+                        console.error(`Path ${modelId} failed: ${response.status} - ${errorDetails}`);
+                        logToTerminal(`[TRACE] ${modelId.split('/')[1]} rejected link.`, "error");
                     }
                 } catch (err) {
-                    lastError = err;
-                    console.warn(`Path ${modelId} unstable, switching...`);
+                    console.error(`Link error on ${modelId}:`, err);
                 }
             }
 
             if (!result) {
-                throw new Error("ALL_NEURAL_PATHS_OFFLINE");
+                throw new Error("All lightning links failed.");
             }
             
             const responseText = result.choices[0].message.content.trim();
