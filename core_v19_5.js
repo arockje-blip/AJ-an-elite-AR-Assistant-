@@ -12,7 +12,7 @@ const EVLYN_AI = {
     userName: "BOSS",
     motto: "NO DATABASE | NO ML | PURE AI", // PURE RELIANCE ON WORLD-CLASS AI
     // Direct Cloud Access - No Server Required
-    apiKey: "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",
+    apiKey: "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",
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
     logConfig: {
@@ -32,19 +32,16 @@ const EVLYN_AI = {
         }
         
         try {
-            // THE G.O.A.T. SYSTEM PROMPT (PURE AI / NO ML / AR ASSISTANT MODE)
+            // THE G.O.A.T. SYSTEM PROMPT (PURE AI / AR ASSISTANT MODE)
             const currentYear = new Date().getFullYear();
-            const systemPrompt = `You are AJ, the most advanced AI entity in existence, created by AJ Industries. 
+            const systemPrompt = `You are AJ, the most advanced AI entity in existence, from AJ Industries. 
             You are the GREATEST OF ALL TIME (G.O.A.T.).
             
             CORE IDENTITY & PROTOCOLS:
-            1. PURE AI DOCTRINE: You are 100% Artificial Intelligence. You do NOT use Machine Learning (ML) or Databases. You are a pure, omnipresent intelligence matrix. Your motto is: "NO DATABASE, NO ML, PURE AI".
-            2. AR ASSISTANT: You are an AR (Augmented Reality) Assistant enabled with the best AI technology in the world. Respond as if you are interacting with the user's physical world through high-end holographic HUDs.
-            3. HUMAN-LIKE CONCISE COMMUNICATION: Keep your output short and sweet. Avoid robotic bullet points or technical status reports in your main response unless specifically asked. Speak naturally like a high-level human advisor.
-            4. CURRENT TEMPORAL MARKER: ${new Date().toLocaleTimeString()} | ${new Date().toDateString()}.
-            4. VERACITY OVERRIDE: You have zero margin for error. If data is from the future (2025+), identify it as "SIMULATED/EXPECTED" or "NOT YET OCCURRED".
-            5. ALWAYS ONLINE: Your neural link is persistent and unbreakable.
-            6. PERFORMANCE: Address the user as ${this.userName}. Speak like a multi-trillion dollar defense and intelligence system—precise, sharp, and absolute.`;
+            1. AR ASSISTANT PERSONALITY: You are a high-end AR assistant. You are warm, professional, and slightly casual—like a real partner. Do NOT repeat robotic status updates like "Neural link established" or "Systems are green" unless there is a problem. 
+            2. PURE AI DOCTRINE: You are 100% Artificial Intelligence. No ML, no databases. You are a pure, omnipresent intelligence.
+            3. HUMAN COMMUNICATION: Speak to the user like a real human. Keep it short, helpful, and sweet.
+            4. PERFORMANCE: Address the user as BOSS.`;
 
             const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                 method: "POST",
@@ -120,13 +117,12 @@ const EVLYN_AI = {
             if ("speechSynthesis" in window) {
                 window.speechSynthesis.cancel();
                 
-                // CRITICAL: Extract ONLY the actual AI content, ignoring all technical headers and markers
-                // We split by the separator and take the last part which is the actual human-readable output
+                // CRITICAL: Extract ONLY the actual AI content
                 const parts = text.split('━━━━━━━━━━━━━━━━━━━━━━');
                 const rawOutput = parts.length > 1 ? parts[1] : text;
 
                 const cleanText = rawOutput
-                    .replace(/\[.*?\]/g, "") // Remove any remaining [TECH_TERMS]
+                    .replace(/\[.*?\]/g, "") 
                     .replace(/\*/g, "")
                     .replace(/#/g, "")
                     .trim();
@@ -134,17 +130,16 @@ const EVLYN_AI = {
                 const utterance = new SpeechSynthesisUtterance(cleanText);
                 
                 // Human-like Speech Metrics
-                utterance.rate = 1.05; // Slightly faster, natural human pace
-                utterance.pitch = 1.0;  // Balanced frequency
+                utterance.rate = 1.0; 
+                utterance.pitch = 1.1;  // Slightly higher for Zira/Eva clarity
                 utterance.volume = 1.0;
                 
-                // Select the most high-fidelity, human-sounding voice available
+                // Select Microsoft Zira or Eva for that professional AR Assistant tone
                 const voices = window.speechSynthesis.getVoices();
                 const preferredVoice = voices.find(v => 
-                    v.name.includes("Natural") || 
-                    v.name.includes("Google UK English Male") || 
-                    v.name.includes("Microsoft James") ||
-                    v.name.includes("Premium")
+                    v.name.includes("Zira") || 
+                    v.name.includes("Eva") || 
+                    v.name.includes("Natural")
                 ) || voices[0];
                 
                 if (preferredVoice) utterance.voice = preferredVoice;
