@@ -13,6 +13,7 @@ const EVLYN_AI = {
     motto: "NO DATABASE | NO ML | PURE AI", // PURE RELIANCE ON WORLD-CLASS AI
     // Direct Cloud Access - No Server Required
     apiKey: "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",
+    isSpeakEnabled: true,
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
     logConfig: {
@@ -114,6 +115,7 @@ const EVLYN_AI = {
 
     speak(text) {
         return new Promise((resolve) => {
+            if (!this.isSpeakEnabled) return resolve();
             if ("speechSynthesis" in window) {
                 window.speechSynthesis.cancel();
                 
@@ -130,7 +132,7 @@ const EVLYN_AI = {
                 const utterance = new SpeechSynthesisUtterance(cleanText);
                 
                 // Human-like Speech Metrics
-                utterance.rate = 1.0; 
+                utterance.rate = 0.9;  // REDESIGN: 0.9x speed for authoritative, clear human pacing
                 utterance.pitch = 1.1;  // Slightly higher for Zira/Eva clarity
                 utterance.volume = 1.0;
                 

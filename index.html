@@ -757,7 +757,10 @@
                 ▶ ENGAGE NEURAL LINK
             </button>
             <button onclick="toggleVoiceInput()" id="voice-btn" class="command-btn">
-                ◉ VOICE INPUT
+                ◉ VOICE INPUT (USER)
+            </button>
+            <button onclick="toggleAIVoice()" id="ai-voice-btn" class="command-btn" style="background: rgba(230, 242, 255, 0.1); border-color: var(--jarvis-accent);">
+                🔊 AI VOICE: ON
             </button>
         </div>
         
@@ -1255,6 +1258,11 @@
         let isPersistent = false;
         const arcReactor = document.getElementById('arcReactor');
         
+        // Ensure voices are loaded for human-like communication
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.getVoices();
+        }
+
         if ('webkitSpeechRecognition' in window) {
             recognition = new webkitSpeechRecognition();
             recognition.continuous = true;
@@ -1300,8 +1308,13 @@
                 // Only keep 'speaking' if we are actually processing or speaking
                 if (isPersistent) {
                     setTimeout(() => {
-                        try { recognition.start(); } catch(e) {}
-                    }, 500);
+                        try { 
+                            recognition.start(); 
+                            logToTerminal('[VOICE] Link Restored', 'log');
+                        } catch(e) {
+                            console.log("Recognition restart blocked:", e);
+                        }
+                    }, 300);
                 }
             };
         }
@@ -1314,11 +1327,31 @@
                 logToTerminal('[VOICE] Always-On Activated', 'log');
                 const voiceStatus = document.querySelectorAll('.status-dot')[1];
                 if (voiceStatus) voiceStatus.style.background = 'var(--jarvis-primary)';
+                document.getElementById('voice-btn').innerText = "◉ VOICE INPUT (ACTIVE)";
             } else {
                 recognition.stop();
                 logToTerminal('[VOICE] Standby', 'log');
                 const voiceStatus = document.querySelectorAll('.status-dot')[1];
                 if (voiceStatus) voiceStatus.style.background = '#555';
+                document.getElementById('voice-btn').innerText = "◉ VOICE INPUT (USER)";
+            }
+        }
+
+        function toggleAIVoice() {
+            if (!window.EVLYN_AI) return;
+            window.EVLYN_AI.isSpeakEnabled = !window.EVLYN_AI.isSpeakEnabled;
+            const btn = document.getElementById('ai-voice-btn');
+            if (window.EVLYN_AI.isSpeakEnabled) {
+                btn.innerHTML = "🔊 AI VOICE: ON";
+                btn.style.borderColor = "var(--jarvis-accent)";
+                btn.style.background = "rgba(230, 242, 255, 0.1)";
+                logToTerminal("[SYSTEM] AI Vocal Matrix: ONLINE", "success");
+            } else {
+                btn.innerHTML = "🔇 AI VOICE: OFF";
+                btn.style.borderColor = "#555";
+                btn.style.background = "rgba(85, 85, 85, 0.1)";
+                window.speechSynthesis.cancel();
+                logToTerminal("[SYSTEM] AI Vocal Matrix: SILENCED", "log");
             }
         }
         
