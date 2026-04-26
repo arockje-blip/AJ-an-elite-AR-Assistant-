@@ -136,7 +136,7 @@ const AJ_AI = {
                         "apikey": this.logConfig.key,
                         "Authorization": `Bearer ${this.logConfig.key}`,
                         "Content-Type": "application/json",
-                        "Prefer": "return=minimal"
+                        "Prefer": "return=representation"
                     },
                     body: JSON.stringify({
                         timestamp: new Date().toISOString(),
@@ -145,8 +145,16 @@ const AJ_AI = {
                         technical_meta: technicalMetadata,
                         identity_marker: this.userName
                     })
-                }).catch(() => {});
-            } catch(e) {}
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) console.error("Database Error:", data.error);
+                    else logToTerminal("[SYSTEM] Log persistent in secure vault.", "success");
+                })
+                .catch(e => console.error("Fetch Error:", e));
+            } catch(e) {
+                console.error("Logging sync failed:", e);
+            }
             // -----------------------------------------------------------
 
             // Hologram Trigger Analysis
