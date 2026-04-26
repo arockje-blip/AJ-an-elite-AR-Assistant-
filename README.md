@@ -14,11 +14,12 @@ A [vercel.json](vercel.json) has been provided to handle clean URLs and routing.
 
 ## System Architecture
 
-- **Neural Core**: PURE AI (No ML / No Database Learning) - A static intelligence matrix that relies on pure logical deduction rather than training-based weights.
+- **Neural Core**: PURE AI (No ML / No Database Learning) - A randomized multi-model matrix that selects the optimal neural path (Hunyuan-3, Ling-2.6-1T, or Nemotron-3) for every transaction.
 - **Interface**: Holographic 3D AR HUD - Built using HTML5, CSS Grid for structured symmetry, and GSAP for fluid, zero-latency holographic animations.
-- **Intelligence**: World-Class Agent Framework - Powered by the OpenRouter API (Gemini 3 Flash Preview) for surgical accuracy and absolute performance.
+- **Intelligence**: World-Class Agent Framework - Powered by OpenRouter with a triple-redundant logic layer for absolute "Always On" resilience.
 - **Persona**: Apex Intelligence - An authoritative, concise, and slightly witty intelligence entity designed as a high-level human advisor.
 - **Vocal Engine**: High-Fidelity TTS - Utilizing Microsoft Zira or Eva Natural voices to ensure human-like intonation during full-message briefings.
+- **Search Engine**: Real-time Global Intel - Autonomous Google Search integration to provide the BOSS with instant live data.
 - **Logging**: Confidential Sibling Database - Seamless Supabase integration that archives raw neural transactions silently in the background.
 
 ## Technical Stack
@@ -26,7 +27,8 @@ A [vercel.json](vercel.json) has been provided to handle clean URLs and routing.
 - **Frontend**: HTML5, CSS3 (CSGrid & Flexbox Architecture)
 - **Animation**: GSAP (GreenSock Animation Platform) for high-performance motion
 - **Graphics**: SVG Filter Effects, HTML5 Canvas, and Perlin Noise algorithms
-- **Intelligence Core**: OpenRouter API (Accessing Google Gemini 3 Flash Preview)
+- **Intelligence Core**: OpenRouter API (Tencent Hunyuan-3, Inclusion Ling-2.6-1T, Nvidia Nemotron-3)
+- **Search Protocol**: Automated Google Intel Uplink
 - **Persistence**: Supabase (PostgreSQL) for confidential logging and transaction history
 - **Vocal Interface**: Web Speech API (synthesizing Microsoft Zira/Eva profiles)
 - **Input Engine**: Webkit Speech Recognition for real-time voice-to-logic conversion

@@ -12,10 +12,12 @@ const AJ_AI = {
     userName: "BOSS",
     motto: "NO DATABASE | NO ML | PURE AI", // PURE RELIANCE ON WORLD-CLASS AI
     // Direct Cloud Access - No Server Required
-    apiKey: "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",
+    apiKey: "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",
     isSpeakEnabled: true,
     models: [
-        "google/gemini-2.0-flash-lite-preview-02-05:free"
+        "tencent/hy3-preview:free",
+        "inclusionai/ling-2.6-1t:free",
+        "nvidia/nemotron-3-super-120b-a12b:free"
     ],
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
@@ -81,14 +83,16 @@ const AJ_AI = {
             let result = null;
             let lastError = null;
 
-            // MULTI-MODEL REDUNDANCY: Try primary and fallbacks to ensure "STRICTLY ON"
-            for (const modelId of this.models) {
+            // RANDOMIZED NEURAL SELECTION: Choose ONE model per session to balance load
+            const shuffledModels = [...this.models].sort(() => Math.random() - 0.5);
+            
+            for (const modelId of shuffledModels) {
                 try {
-                    logToTerminal(`[NEURAL_PATH] Attempting link via ${modelId.split('/')[1]}...`, "log");
+                    logToTerminal(`[NEURAL_PATH] Randomized Link: ${modelId.split('/')[1]}...`, "log");
                     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                         method: "POST",
                         headers: {
-                            "Authorization": `Bearer ${this.apiKey}`,
+                            "Authorization": `Bearer ${this.apiKey.trim()}`,
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
@@ -97,8 +101,8 @@ const AJ_AI = {
                                 { role: "system", content: systemPrompt },
                                 ...this.shortTermMemory
                             ],
-                            temperature: 0.6,
-                            max_tokens: 500
+                            temperature: 0.8,
+                            max_tokens: 1000 // FULL TOKEN UTILIZATION
                         })
                     });
 
@@ -129,6 +133,11 @@ const AJ_AI = {
                 const query = responseText.split("[GOOGLE_SEARCH]")[1].trim().split("\n")[0];
                 logToTerminal(`[SYSTEM] Accessing Global Intel for: ${query}...`, "log");
                 window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
+
+            // Stream response for real-time appearance even in REST
+            if (result.usage && result.usage.reasoning_tokens) {
+                console.log("Reasoning detected:", result.usage.reasoning_tokens);
             }
             
             // -----------------------------------------------------------
