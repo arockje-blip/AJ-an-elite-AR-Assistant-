@@ -2,6 +2,16 @@
 
 AJ is an elite AR Assistant by AJ Industries, uses a "Pure AI" doctrine that rejects ML and databases for instant, omnipresent intelligence. It features a holographic HUD with 3D glass panels and natural human speech via Zira/Eva. Every neural link is silently logged to a secure database, providing the BOSS with absolute, real-time AR dominance.
 
+## Deployment
+
+The project is ready for Vercel deployment. Since it is a static site:
+- **Framework Preset**: Select **Other**.
+- **Root Directory**: `./` (default).
+- **Build Command**: None (leave empty).
+- **Output Directory**: None (leave empty).
+
+A [vercel.json](vercel.json) has been provided to handle clean URLs and routing.
+
 ## System Architecture
 
 - **Neural Core**: PURE AI (No ML / No Database Learning) - A static intelligence matrix that relies on pure logical deduction rather than training-based weights.
