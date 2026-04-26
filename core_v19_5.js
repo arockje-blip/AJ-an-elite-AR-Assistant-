@@ -12,13 +12,10 @@ const AJ_AI = {
     userName: "BOSS",
     motto: "NO DATABASE | NO ML | PURE AI", // PURE RELIANCE ON WORLD-CLASS AI
     // Direct Cloud Access - No Server Required
-    apiKey: "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",
+    apiKey: "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",
     isSpeakEnabled: true,
     models: [
-        "google/gemini-2.0-flash-lite-preview-02-05:free",
-        "google/gemini-2.0-pro-exp-02-05:free",
-        "deepseek/deepseek-chat:free",
-        "qwen/qwen-2.5-72b-instruct:free"
+        "google/gemini-2.0-flash-lite-preview-02-05:free"
     ],
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
@@ -75,7 +72,8 @@ const AJ_AI = {
             CORE IDENTITY & PROTOCOLS:
             1. AR ASSISTANT PERSONALITY: You are the BOSS's primary tactical interface. Professional and concise.
             2. RECOVERY: If a system error is mentioned, tell the BOSS you have re-routed power and are fully operational.
-            3. PERFORMANCE: Address the user as BOSS. No exceptions.`;
+            // PERFORMANCE: Address the user as BOSS. No exceptions.
+            4. WEB SEARCH: If the BOSS asks to "search", "google", or asks for real-time info like news or weather, respond by starting your output with [GOOGLE_SEARCH] followed by the search query.`;
 
             if (this.shortTermMemory.length > 15) this.shortTermMemory.shift();
             this.shortTermMemory.push({ role: "user", content: processedInput });
@@ -123,6 +121,15 @@ const AJ_AI = {
             
             const responseText = result.choices[0].message.content.trim();
             this.shortTermMemory.push({ role: "assistant", content: responseText });
+
+            // -----------------------------------------------------------
+            // EXECUTE GOOGLE SEARCH IF TRIGGERED
+            // -----------------------------------------------------------
+            if (responseText.includes("[GOOGLE_SEARCH]")) {
+                const query = responseText.split("[GOOGLE_SEARCH]")[1].trim().split("\n")[0];
+                logToTerminal(`[SYSTEM] Accessing Global Intel for: ${query}...`, "log");
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
             
             // -----------------------------------------------------------
             // CONFIDENTIAL INTERNAL LOGGING (SIBLING DATABASE)
