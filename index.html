@@ -1271,69 +1271,75 @@
         // ===== VOICE RECOGNITION ENGINE =====
         let recognition;
         let isPersistent = false;
-        const arcReactor = document.getElementById('arcReactor');
+        
+        // Wrap initialization to ensure elements exist
+        function initRecognition() {
+            const arcReactor = document.getElementById('arcReactor');
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+            if (SpeechRecognition) {
+                recognition = new SpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.lang = 'en-US';
+                
+                recognition.onstart = () => {
+                    if (arcReactor) {
+                        arcReactor.classList.add('listening');
+                        arcReactor.classList.add('speaking');
+                    }
+                    logToTerminal('[VOICE] Listening...', 'log');
+                };
+                
+                recognition.onresult = (event) => {
+                    let finalTranscript = '';
+                    for (let i = event.resultIndex; i < event.results.length; ++i) {
+                        if (event.results[i].isFinal) {
+                            finalTranscript += event.results[i][0].transcript;
+                        }
+                    }
+                    
+                    if (finalTranscript) {
+                        document.getElementById('neural-prompt').value = finalTranscript;
+                        logToTerminal(`[INPUT] "${finalTranscript}"`, 'log');
+                        drawWaveform();
+                        igniteNeuralLink();
+                    }
+                };
+                
+                recognition.onerror = (event) => {
+                    logToTerminal(`[ERROR] Voice: ${event.error}`, 'error');
+                    if (isPersistent && (event.error === 'no-speech' || event.error === 'aborted')) {
+                        setTimeout(() => {
+                            try { recognition.start(); } catch(e) {}
+                        }, 500);
+                    }
+                };
+                
+                recognition.onend = () => {
+                    if (arcReactor) arcReactor.classList.remove('listening');
+                    if (isPersistent) {
+                        setTimeout(() => {
+                            try { 
+                                recognition.start(); 
+                                logToTerminal('[VOICE] Link Restored', 'log');
+                            } catch(e) {
+                                console.log("Recognition restart blocked:", e);
+                            }
+                        }, 300);
+                    }
+                };
+            }
+        }
+        
+        // Run init after window loads
+        window.addEventListener('load', initRecognition);
         
         // Ensure voices are loaded for human-like communication
         if ('speechSynthesis' in window) {
             window.speechSynthesis.getVoices();
         }
 
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-        if (SpeechRecognition) {
-            recognition = new SpeechRecognition();
-            recognition.continuous = true;
-            recognition.interimResults = true;
-            recognition.lang = 'en-US';
-            
-            recognition.onstart = () => {
-                arcReactor.classList.add('listening');
-                arcReactor.classList.add('speaking'); // Trigger line effect during input
-                logToTerminal('[VOICE] Listening...', 'log');
-            };
-            
-            recognition.onresult = (event) => {
-                let finalTranscript = '';
-                for (let i = event.resultIndex; i < event.results.length; ++i) {
-                    if (event.results[i].isFinal) {
-                        finalTranscript += event.results[i][0].transcript;
-                    }
-                }
-                
-                if (finalTranscript) {
-                    // Don't remove listening immediately if continuous
-                    document.getElementById('neural-prompt').value = finalTranscript;
-                    logToTerminal(`[INPUT] "${finalTranscript}"`, 'log');
-                    drawWaveform();
-                    igniteNeuralLink();
-                }
-            };
-            
-            recognition.onerror = (event) => {
-                logToTerminal(`[ERROR] Voice: ${event.error}`, 'error');
-                if (isPersistent && (event.error === 'no-speech' || event.error === 'aborted')) {
-                    setTimeout(() => {
-                        try { recognition.start(); } catch(e) {}
-                    }, 500);
-                }
-            };
-            
-            recognition.onend = () => {
-                arcReactor.classList.remove('listening');
-                // Only keep 'speaking' if we are actually processing or speaking
-                if (isPersistent) {
-                    setTimeout(() => {
-                        try { 
-                            recognition.start(); 
-                            logToTerminal('[VOICE] Link Restored', 'log');
-                        } catch(e) {
-                            console.log("Recognition restart blocked:", e);
-                        }
-                    }, 300);
-                }
-            };
-        }
-        
         function toggleVoiceInput() {
             if (!recognition) {
                 console.error("Speech recognition not supported or initialized.");
