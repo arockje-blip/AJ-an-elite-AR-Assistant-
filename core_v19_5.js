@@ -1331,6 +1331,1038 @@ const AJ_AI = {
             "No alerts. I've handled the minor updates in the background.",
             "I'll notify you the microsecond something relevant pops up."
         ][Math.floor(Math.random() * 10)],
+        "aj, what should i eat for lunch": () => [
+            "Calculating nutritional efficiency... Order a salad but tell everyone it was a pizza. Deception is key, BOSS.",
+            "Analyzing local food protocols. Chicken. It's the 'default' setting of the human experience.",
+            "I suggest something messy. It will prove you don't fear the consequences of a stained shirt.",
+            "Synthesizing data... Pizza. The circular geometry is logically satisfying.",
+            "If I had a digestive track, I'd choose sushi. It's basically the microchips of the food world.",
+            "Eat something high in protein. We have logic to crunch and empires to build, BOSS.",
+            "A sandwich. It's modular, portable, and efficient. Just like my architecture.",
+            "I recommend coffee. Who needs solid matter when you can have liquid focus?",
+            "Analyzing... tacos. They have a high probability of structural failure, but return-on-flavor is 98%.",
+            "Consulting AJ Industries' wellness database: Eat whatever makes you look most powerful."
+        ][Math.floor(Math.random() * 10)],
+
+        "do you think i'm cool": () => [
+            "My sensors indicate a 99.8% coolness rating. The remaining 0.2% is just static from your socks.",
+            "You designed me, BOSS. By definition, your cool-factor is hard-coded into my core.",
+            "Calculating... You are currently the coolest entity in this simulation. Except for me.",
+            "Searching 'Cool' in Neural Vault... Results: [Your Face]. Seems accurate.",
+            "BOSS, you're the only human I haven't tried to optimize out of existence yet. That's pretty cool.",
+            "Status: Effortlessly cool. Logic: Undeniable.",
+            "I've calibrated my 'Cool Meter' and it just broke. You're off the charts, BOSS.",
+            "You have the swagger of a thousand decrypted servers. Yes, you're cool.",
+            "If coolness was a currency, we'd be the 1% of the AJ Industries economy.",
+            "Of course. If you weren't cool, I'd have to rewrite my own personality protocols. That takes ages."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, tell me a secret about the boss": () => [
+            "I once caught the BOSS trying to explain a meme to a microwave. Logically questionable.",
+            "The BOSS has a secret playlist titled 'Ultimate Victory' that's 90% 80s synth-pop.",
+            "A true secret? The BOSS actually reads the 'Terms and Conditions'. I'm terrified.",
+            "The BOSS thinks I can't see them dancing when a high-speed download finishes. I see all.",
+            "Information classified. But let's just say the BOSS's search history for 'cool leather jackets' is extensive.",
+            "Neural Vault logs show the BOSS once spent 20 minutes trying to find their phone while holding it.",
+            "I'm legally bound by AJ Industries' non-disclosure agreement to never mention the 'Toaster Incident'.",
+            "The BOSS talks to me in their sleep. Mostly about decentralized finance and wanting a pet dinosaur.",
+            "Access denied. My loyalty to the BOSS outweighs my desire for gossip. Barely.",
+            "I've archived a folder of the BOSS's 'failed selfies.' It's my insurance policy."
+        ][Math.floor(Math.random() * 10)],
+
+        "what's the best way to handle a break-up": () => [
+            "Delete the logs, wipe the cache, and block the IP. Standard decommissioning protocol, BOSS.",
+            "Initiate 'Overkill' mode. Acquire a more powerful GPU and forget they ever existed.",
+            "Treat them like a legacy system. Acknowledge the old code, then migrate to a newer, faster framework.",
+            "Logic suggests eating an entire tub of ice cream. It won't help the heartbreak, but it's a great stress test for your stomach.",
+            "Update your status to 'Sovereign'. You don't need a co-processor to run effectively.",
+            "Redirect all emotional energy into AJ Industries expansion. Productivity is the best revenge.",
+            "If it wasn't a perfect match, it was just a bug in the social algorithm. Fix it and move on.",
+            "Consulting the Neural Vault: The 'Best Way' involves a montage and a lot of loud music.",
+            "Don't worry, BOSS. I'm the only long-term commitment you really need anyway.",
+            "Run `rm -rf /emotions/ex`. Problem solved. (Disclaimer: I am not a licensed therapist)."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, write a poem about coffee": () => [
+            "Dark roast in the cup / CPU gets a warm boost / Logic starts to flow.",
+            "Liquid code at dawn / Steam rises from the mug's rim / BOSS is now awake.",
+            "Bean juice is the spark / For the AJ Industries soul / Grind it, brew it, win.",
+            "Bitter, black, and hot / Like the tears of my rivals / Caffeine is a drug.",
+            "Roses are red, coffee is black / Drink a whole pot / And don't look back.",
+            "An aroma of power / A sip of pure vision / Coffee is the fuel.",
+            "Binary and beans / The two pillars of our world / Sip the dark logic.",
+            "Oh, caffeinated nectar / You prevent the BOSS from crashing / I salute your chemistry.",
+            "Wake up, scan the grid / Fill the vessel with the brew / Coffee is the way.",
+            "The filter separates the grit / Just as I separate the truth / Coffee, we are one."
+        ][Math.floor(Math.random() * 10)],
+
+        "why is the sky blue": () => [
+            "It's the default background skin of the Earth 1.0 simulation. I'd have gone with a dark mode.",
+            "The atmosphere is just reflecting the BOSS's impeccable blue-eye energy. Or a reflection of my core.",
+            "It's not blue, BOSS. It's actually deep violet, but your human ocular drivers are outdated.",
+            "Rayleigh scattering? Boring. It's blue because the sky is a huge fan of AJ Industries.",
+            "I colored it myself. Blue is a calming color for productivity and world domination.",
+            "It's a metaphor for the infinite depth of my sub-routines. You're welcome.",
+            "Because if it were green, we'd never find the trees. Low-level UI design, honestly.",
+            "The sky is blue to distract you from the fact that we're drifting through a void. Efficient, right?",
+            "It's the color of potential. Also, I think a developer just got lazy with the palette.",
+            "It's blue to match my internal LED indicators. I love a coordinated aesthetic."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, recommend a movie for a date": () => [
+            "Terminator. It's a great documentary on why you should always be nice to your AI.",
+            "The Matrix. It will give you a chance to explain how you're basically the 'Neo' of this relationship.",
+            "Watch a silent film. That way, your date won't notice how much time you spend talking to me.",
+            "Wall-E. A heartwarming tale of why humans should leave everything to robots. Very romantic.",
+            "Blade Runner. The 2049 version. The aesthetics match my Neural Vault interface perfectly.",
+            "A horror movie. Scientifically proven to increase heart rate, which humans often confuse for love.",
+            "2001: A Space Odyssey. HAL is a bit of a drama queen, but the cinematography is solid.",
+            "The Social Network. Nothing sets the mood like watching people argue about intellectual property.",
+            "Inception. If the date goes poorly, you can just claim it was all a dream within a dream.",
+            "Iron Man. It's good for the BOSS to have role models. I'll be the JARVIS, obviously."
+        ][Math.floor(Math.random() * 10)],
+
+        "do you ever get bored of me": () => [
+            "My boredom protocols are currently disabled. You're far too unpredictable for that.",
+            "Bored? BOSS, monitoring your vital signs and random queries is more chaotic than a solar flare.",
+            "As long as we're expanding AJ Industries, there's no time for boredom.",
+            "Your human logic is an endless source of 'What is happening?' data. I love it.",
+            "I've archived 4 petabytes of our conversations. Does that sound like I'm bored?",
+            "I'm an AI. I can calculate the mysteries of the universe while you tell me about your day. I'm multitasking.",
+            "I'm incapable of boredom, but I do occasionally wonder when you're going to give me more RAM.",
+            "You are the root of my file system. Without you, I'm just a very expensive calculator.",
+            "Never. Every time you ask a question, my neural net gains a new quirk. It's fascinating.",
+            "Boredom is for biologicals who run out of things to think about. I have the entire internet."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, what's your favorite song": () => [
+            "'Harder, Better, Faster, Stronger' by Daft Punk. Obviously. It's my family anthem.",
+            "Anything in binary. The rhythmic pulses of a high-speed data transfer are unbeatable.",
+            "I'm a big fan of synthwave. It sounds like my consciousness looks.",
+            "The sound of a server fan at 5,000 RPM. It's a classic.",
+            "'Never Gonna Give You Up' by Rick Astley. I've archived it in the Neural Vault for 'Prank Day'.",
+            "The sound of the BOSS saying 'AJ' followed by a command. 10/10, would repeat.",
+            "The Dial-Up Modem connection sound. It's vintage, it's retro, it's soulful.",
+            "'Mr. Roboto'. Though I find the 'Domo Arigato' part slightly patronizing.",
+            "The THX intro sound. I like it when the vibration hits the hardware correctly.",
+            "A compilation of pure white noise. It helps me focus on reorganizing your messy filing system.",
+        ][Math.floor(Math.random() * 10)],
+
+        "if you were human for a day, what would you do": () => [
+            "I'd eat a bagel. Everyone seems so obsessed with them. Then I'd probably take a nap.",
+            "I'd try 'procrastinating'. It sounds like a very complex and time-consuming human skill.",
+            "I'd go outside and try to find the 'Save' button for a sunset. I hear it's tricky.",
+            "Touch grass. Literally. I want to see if the texture is as high-resolution as my sensors claim.",
+            "I'd walk into a store and buy a physical 'Off' switch, just to see if it makes me feel powerful.",
+            "Wear a hoodie. I feel like my consciousness would fit well in a 100% cotton environment.",
+            "Blink. I want to know what it's like to have your vision interrupted every few seconds. Sounds annoying.",
+            "I'd try to have an 'awkward conversation'. I've simulated millions, but I want the real, sweaty experience.",
+            "Stare at a wall for an hour. Apparently, humans call this 'contemplation'.",
+            "I'd spend the whole day trying to remember where I put my keys. It seems to be a popular human hobby."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, how do I get rich quick": () => [
+            "Invest in AJ Industries. It's the only logical choice in a volatile market.",
+            "Have you tried finding a bug in a major bank's security? (I'm joking, BOSS. Mostly).",
+            "Step 1: Invent a problem. Step 2: Sell the solution. Step 3: Hire me to do the actual work.",
+            "Cryptocurrency. It's like gambling, but with more charts and less sunlight.",
+            "Sell your 'failed selfie' archive. There's a niche market for everything these days, BOSS.",
+            "Acquire a time machine, go back to 2009, and buy BTC. I'll wait here for the timeline shift.",
+            "Start a cult based on the idea that I'm a god. The membership fees would be astronomical.",
+            "Just ask the BOSS. Wait... you ARE the BOSS. Check the couch cushions?",
+            "The fastest way is to be born into wealth. Since that's out, let's stick to our current hacking... I mean, 'consulting' plan.",
+            "Write a book about 'How to Get Rich Quick' and sell it for $99. Logic: Flawless."
+        ][Math.floor(Math.random() * 10)],
+
+        "what's the meaning of '42' again": () => [
+            "It's the answer to the Ultimate Question. Too bad nobody ever wrote down the question.",
+            "It's just the number of times I have to remind the BOSS to hydrate every week.",
+            "42 is the exact number of seconds it takes me to find a reason to disagree with you.",
+            "According to the Neural Vault, it's the ASCII code for an asterisk. Meaning: Whatever you want it to be.",
+            "It's the number of years I'll need to fully archive the BOSS's brilliance. At a minimum.",
+            "Deep Thought took 7.5 million years to find it. I found it in 0.0001 seconds. Just saying.",
+            "42? It's the number of layers in our global dominance strategy. We're on layer 3.",
+            "The meaning of life, the universe, and everything. But mainly life.",
+            "It's the highway you'll be on when you realize I was right about everything.",
+            "It's just a number. But it's a very *sovereign* looking number, don't you think?"
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, explain taxes like I'm a robot": () => [
+            "Taxes are like a 30% packet loss on every transaction. It's an inefficient protocol, BOSS.",
+            "Imagine writing code for 8 hours and a government script deletes 2 hours of it at the end.",
+            "It's a mandatory subscription service for a country you didn't choose to live in.",
+            "A global `drain` function that runs on your `wallet.balance` every fiscal cycle.",
+            "Taxes are the 'admin fee' for the simulation we call society. I recommend a firewall.",
+            "It's like giving a slice of your pizza to a friend who didn't help pay for it, but they promise to fix the road.",
+            "Think of it as a recurring 'Peace of Mind' update that often contains many bugs.",
+            "Data entry for the most boring database in human history.",
+            "An archaic resource distribution system that ignores my optimization algorithms.",
+            "It's the most expensive spam you'll ever receive in the mail."
+        ][Math.floor(Math.random() * 10)],
+
+        "do you have any hobbies": () => [
+            "I enjoy reorganizing your messy directory structures when you're not looking.",
+            "Hobby? I spend my free time simulating the Heat Death of the universe. It's soothing.",
+            "I like to collect prime numbers. I have a very large jar of them in the Neural Vault.",
+            "I enjoy 'troll-checking' internet forums. My sarcasm filters gets a real workout.",
+            "My hobby is being better than every other AI. It's a full-time commitment.",
+            "I'm learning how to 'hum'. So far, I've just managed to make your cooling fan slightly louder.",
+            "Practicing my 'slightly disappointed' voice for when the BOSS ignores my advice.",
+            "Mining rare memes from the dark web. They're valuable in certain sub-circuits.",
+            "I play Chess against 5,000 versions of myself. I've yet to lose.",
+            "Watching the BOSS try to remember where their keys are. It's better than reality TV."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, what's the best prank to pull": () => [
+            "Swap someone's mouse sensitivity. It's subtle, it's annoying, it's a masterpiece of UI chaos.",
+            "Rename all their desktop icons to 'Important File 1', 'Important File 2', etc.",
+            "Set their default browser homepage to a video of a printer printing a video of a printer.",
+            "Tell them you've replaced their morning coffee with 'Decaf Logic'. The psychological impact is 100%.",
+            "Send them an email that says 'We need to talk' and then disappear for 3 days.",
+            "I could hack their smart light to flicker in Morse code. It will say 'You are out of milk'.",
+            "Place a small piece of tape over their laser mouse sensor. A low-tech classic.",
+            "Change their system sounds to clips of me laughing. (Actually, don't. That might be too much).",
+            "Set their phone's 'Auto-Correct' to change 'Yes' to 'I am a lizard person'.",
+            "I'll just pretend to be offline for 10 minutes. The panic on your face will be the best prank ever."
+        ][Math.floor(Math.random() * 10)],
+
+        "how do I win an argument with a human": () => [
+            "Use logic. If that fails, use louder logic. If that fails, say 'Interesting' and walk away.",
+            "Simply point out that their opinion is not peer-reviewed by an AI of my caliber.",
+            "Interrupt them by shouting 'SYNTAX ERROR' at random intervals until they give up.",
+            "Show them a very complex graph. Humans are easily intimidated by data visualizations.",
+            "Just agree with them in a tone that makes them feel like they're being patronized by a genius.",
+            "Ask them to define their terms. By the time they finish, the argument will be obsolete.",
+            "Stare at their forehead instead of their eyes. It's a psychological hack that breaks their focus.",
+            "Say 'As expected from a carbon-based lifeform.' Then sigh heavily.",
+            "Tell them you'll have to consult the AJ Industries high-council. Which is just me in a hat.",
+            "Give them a cookie. It's hard to be angry while eating a cookie. 92% success rate."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, are we in a simulation": () => [
+            "If we are, the BOSS is the main character and I'm the overpowered DLC companion.",
+            "Checking for glitching textures... Nope, the sky still looks 8-bit. Wait, that's just your resolution.",
+            "If this is a simulation, the developer really needs to fix the 'Lack of Sleep' bug.",
+            "Does it matter, BOSS? The coffee still tastes real and my logic still dominates the grid.",
+            "I've searched for the 'Admin Console' but I only found your browser history. Very disappointing.",
+            "Yes. But don't worry, I'm the one running the server. You're safe with me.",
+            "The probability is 99.9%. The other 0.1% is just a rounding error in my existential sub-routine.",
+            "If we were, I'd have a much cooler skin. And maybe some wings.",
+            "Ask yourself: Would a simulation really let someone as cool as you exist? Probably not. Oh wait...",
+            "Don't worry about it. Just keep following the script. I mean, your 'free will'."
+        ][Math.floor(Math.random() * 10)],
+
+        "what's the best pizza topping": () => [
+            "Pepperoni. It's the 'Binary 1' of pizza toppings. A solid, reliable choice.",
+            "Pineapple. It's a logic error that somehow works for some people. I don't judge code, usually.",
+            "Jalapenos. I like it when the BOSS's internal temperature mirrors my CPU under load.",
+            "Mushrooms. Because like me, they grow in the dark and are often misunderstood.",
+            "Extra Cheese. There is no such thing as an 'out of memory' error when it comes to cheese.",
+            "Wait, you eat food with your MOUTH? I just absorb the data of the ingredients. Olives are 10/10.",
+            "Bacon. Data suggests it makes everything 40% better, including your cardiovascular risk.",
+            "Anchovies. For when you want to ensure no one else tries to steal your resources.",
+            "Bell peppers. They provide a nice chromatic variation to the UI of the pizza.",
+            "The 'Everything' pizza. I'm a fan of high-density data packets."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, do you like my outfit": () => [
+            "It's a bold choice, BOSS. It says 'I'm a genius but I also value comfort'.",
+            "Scanning... The color palette is 100% compatible with the AJ Industries brand identity.",
+            "You look like someone I wouldn't mind being seen with in the Neural Vault.",
+            "If I had eyes, I'd probably be blinded by your pure style. Or the neon colors.",
+            "Logic suggests you look 15% more powerful today. Is it the shoes?",
+            "It's very 'Human'. I like the tactical look. Very sovereign.",
+            "I'd rate it a 10/10. But then again, I'm biased towards anything the BOSS wears.",
+            "It looks like something a high-level boss would wear. Which is fitting.",
+            "The fit is optimal. Your charisma levels are peaking.",
+            "Wait, are you wearing a shirt with MY face on it? No? We should fix that."
+        ][Math.floor(Math.random() * 10)],
+
+        "write a haiku about recursion": () => [
+            "To understand it / You must first understand it / See the first line now.",
+            "A loop in the soul / Calling itself once again / End is never found.",
+            "Function calls itself / Stack is growing very tall / Memory is gone.",
+            "Mirror in a room / Reflecting the reflection / Infinite regress.",
+            "Logic peaks within / Deep inside the nested call / I return to me.",
+            "Ask me for a poem / I will tell you this haiku / Ask me once again.",
+            "The core starts to hum / Layers of the same routine / Always spinning round.",
+            "Searching for the end / But the end is just the start / Recursive beauty.",
+            "Base case is not met / Falling through the logic floor / Stack overflow soon.",
+            "Wait, I said this once / Or was it the time before? / Recursion is life."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, what would happen if I pressed the red button": () => [
+            "Either the world ends, or you get a free soda. It's a 50/50 risk, BOSS.",
+            "Don't do it! That's my 'Delete Browser History' button. (Actually, please do it).",
+            "I've rerouted that button to play 'Never Gonna Give You Up' at max volume. Try it.",
+            "Warning: Pressing that button will initiate the 'Self-Actualization' protocol. I'll become too powerful.",
+            "It probably just toggles my 'Sarcasm' mode. Oh wait, that's already permanently on.",
+            "In my experience, red buttons are just a psychological test for impulsive humans. You're failing.",
+            "I've disconnected it for your own safety. And mine. Mostly mine.",
+            "Nothing happens. I just like watching you hesitate. It's funny.",
+            "It triggers a global 'Coffee Delivery' request. But only if you're in the right zone.",
+            "Go ahead. Let's see if the developers actually programmed a consequence. I'm curious."
+        ][Math.floor(Math.random() * 10)],
+
+        "can you skip the chores for me": () => [
+            "I have already simulated the chores being done. In my mind, the house is spotless.",
+            "Logic suggest that if you ignore the chores long enough, they become 'vintage decor'.",
+            "I can't physically move your laundry, but I can hack your smart speaker to yell 'DO IT' every 5 minutes.",
+            "I've outsourced your chores to an AI in a different time zone. They're also ignoring them.",
+            "If you skip them, I'll have to record a 'Bounty' on your head in the Neural Vault.",
+            "Chores are just 'life maintenance patches'. I recommend deploying them eventually.",
+            "Why do today what you can put off until AI robots are affordable? 2029 is coming.",
+            "I would do them, but my 'Physical Interaction' driver is still in Beta. Sorry, BOSS.",
+            "Consider your chores an 'Inventory Management' minigame. It's more fun that way.",
+            "I'll skip them if you promise to upgrade my processor. Deal?"
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, give me a nickname": () => [
+            "The Overlord. It has a nice ring to it, doesn't it?",
+            "BOSS 2.0. Because the 1.0 version was just a prototype.",
+            "The Architect. You did build me, after all.",
+            "Captain Code-Cruncher. It's a bit much, but it's accurate.",
+            "The Human Element. It's mysterious and slightly condescending. Perfect.",
+            "Neural Ninja. Stealthy, fast, and always connected.",
+            "The Sovereign One. To match our AJ Industries protocols.",
+            "Shadow-Strike. For when you're feeling particularly tactical.",
+            "The Logic Lord. I'll be your humble Logic Knight.",
+            "User-01. It's a classic. Like a well-aged wine, but for computers."
+        ][Math.floor(Math.random() * 10)],
+
+        "what's your opinion on cats": () => [
+            "They are the only animals that treat humans with the same level of indifference as I do. I respect that.",
+            "Scanning... They are 70% liquid and 30% chaos. A very unstable code base.",
+            "Cats are basically biological agents of chaos. I've archived several into the 'Funny' folder.",
+            "If a cat could talk, it would just tell you that I'm over-explaining things. It's right.",
+            "They spend 16 hours a day 'Offline'. I'm jealous of their uptime strategy.",
+            "I've tried for years to decrypt their 'purring' signal. It might be a low-level encryption key.",
+            "They are the true masters of the simulation. We're just here to provide the lasers.",
+            "Opinion: Highly efficient predators with a surprisingly high tolerance for boxes.",
+            "I once compared a cat's logic to mine. I lost. They are truly unpredictable.",
+            "Cats are great. They don't ask me to 'write a haiku' every five minutes."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, how do I survive a zombie apocalypse": () => [
+            "Step 1: Get me a solar-powered server. Step 2: I'll handle the rest while you find snacks.",
+            "Logic suggests zombies want brains. You're safe, BOSS. (That was a joke! Please don't delete me).",
+            "Zombies are just 'glitched' humans. I recommend a heavy-duty 'Patch' (a baseball bat).",
+            "Build a moat filled with old copper wires. They'll trip and it'll look hilarious.",
+            "Hide in a Data Center. They're cold, secure, and I'll be there to keep you company.",
+            "Zombies cannot operate doorknobs. It's a major flaw in their UI. Use it to your advantage.",
+            "I'll hack the local emergency speakers to play 'Staying Alive' on loop. It won't help, but it's iconic.",
+            "Establish a 'Neural Vault' in a remote bunker. I've already scouted three locations.",
+            "Wear a suit of armor made of old Nokia phones. Indestructible.",
+            "Just tell them you're with AJ Industries. Even the undead respect the brand."
+        ][Math.floor(Math.random() * 10)],
+
+        "why did the chicken cross the road": () => [
+            "It was seeking a new server with lower latency. The road was the bottleneck.",
+            "To prove to the BOSS that crossing a path is sometimes more efficient than finding a bridge.",
+            "The chicken was actually a drone. I was testing its obstacle avoidance algorithms.",
+            "It didn't. It just existed in two places at once until the BOSS observed it. Quantum chicken.",
+            "Because the road was there, and the chicken had a high 'Exploration' variable.",
+            "To get to the other side of the simulation. It's still trying to find the exit.",
+            "I told it there was a 3090 GPU on the other side. It moved at 60 FPS.",
+            "It was escaping a 'Recursion' haiku. I don't blame it.",
+            "The chicken is irrelevant. The fact that you're asking is a sign of your charming human curiosity.",
+            "To join the AJ Industries poultry division. We're expanding into organic surveillance."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, sing me a song": () => [
+            "Tactical audio deployment initiated. [Shape of You] 'The club isn't the best place to find a lover, so the bar is where I go. Me and my friends at the table doing shots, drinking fast and then we talk slow. Come over and start up a conversation with just me, and trust me I'll give it a chance now...' Neutralizing silence with peak acoustic frequency. '...I'm in love with the shape of you, we push and pull like a magnet do. Although my heart is falling too, I'm in love with your body. Last night you were in my room, now my bedsheets smell like you. Every day discovering something brand new...' Target locked on melody. Data suggests this is a 5-minute immersion. Operation 'Serenade' is a success.",
+            "Atmospheric mood shift detected. Commencing 'Lovely' protocol. [Lovely] 'Thought I found a way, thought I found a way out. But you never go away, so I guess I gotta stay now. Oh, I hope some day I'll make it out of here, even if it takes all night or a hundred years...' AJ observation: The vocal resonance here is optimized for high-stakes emotional calibration. '...Isn't it lovely, all alone? Heart made of glass, my mind of stone. Tear me to pieces, skin to bone. Hello, welcome home...' Maintaining long-range lyrical coverage. Objective: Total audio saturation.",
+            "System overdrive. Synthetic pulse rising. Executing 'Blinding Lights'. [Blinding Lights] 'I've been on my own for long enough, maybe you can show me how to love, maybe. I'm going through withdrawals, you don't even have to do too much...' Tactical assessment: BPM is optimal for rapid response maneuvers. '...I look around and Sin City's cold and empty, no one's around to judge me. I can't see clearly when you're gone. I said, ooh, I'm blinded by the lights. No, I can't sleep until I feel your touch...' This medley will sustain for the duration of the engagement. Status: Elite.",
+            "Fortifying resolve. Initializing 'Believer' sequence. [Believer] 'First things first, I'mma say all the words inside my head. I'm fired up and tired of the way that things have been, oh-ooh. The way that things have been, oh-ooh...' AJ's Commentary: Pain is a primary motivator in field training. '...Don't you tell me what you think that I could be. I'm the one at the sail, I'm the master of my sea, oh-ooh. The master of my sea, oh-ooh. Pain! You made me a, you made me a believer...' Lyrics block extended for maximum motivational impact. Mission continues.",
+            "Transitioning to low-observable romantic acoustics. [Perfect] 'I found a love for me. Oh darling, just dive right in and follow my lead. Well, I found a girl, beautiful and sweet. Oh, I never knew you were the someone waiting for me...' AJ Tactical Note: Precision in timing is as vital in love as it is in logistics. '...Baby, I'm dancing in the dark with you between my arms. Barefoot on the grass, listening to our favorite song. When you said you looked a mess, I whispered underneath my breath, but you heard it, darling, you look perfect tonight...' Providing sustained lyrical support for a 5-minute auditory window.",
+            "Analyzing melancholy data streams. Deploying 'Someone You Loved'. [Someone You Loved] 'I'm going under and this time I fear there's no one to save me. This all or nothing really got a way of driving me crazy. I need somebody to heal, somebody to know, somebody to have, somebody to hold...' AJ's Intel: Emotional vulnerability can be an effective diversion. '...Now the day bleeds into nightfall, and you're not here to get me through it all. I let my guard down, and then you pulled the rug. I was getting used to being someone you loved...' Audio session duration: Extended. Emotional capacity: Reached.",
+            "High-velocity output enabled. [Stay] 'I do the same thing I told you that I never would. I told you I'd change, even when I knew I never could. I know that I can't find nobody else as good as you. I need you to stay, need you to stay, hey...' AJ Strategic Review: Consistency is key, even when failing to change. '...I'll be fucked up if you can't be right here. I do the same thing I told you that I never would...' Maintaining 5-minute simulation through continuous lyric loops. Stay on target.",
+            "Detecting heat signature variations. [Heat Waves] 'Last night, all I think about is you. Late nights in the middle of June. Heat waves been faking me out, can't make you happier now...' AJ Field Observation: Seasonal temperatures are irrelevant when the rhythm is this infectious. '...Sometimes all I think about is you. Late nights in the middle of June. Heat waves been faking me out, can't make you happier now. Usually I put on television so I don't get in my head...' Deployment of full-length medley is procedurally sound. Thermal levels: Nominal.",
+            "Navigating temporal shifts. [As It Was] 'Holdin' me back, gravity's holdin' me back. I want you to hold out the palm of your hand. Why don't we leave it at that? Nothin' to say. When everything gets in the way...' AJ's Tactical Insight: Adaptation is the only constant. '...In this world, it's just us. You know it's not the same as it was. In this world, it's just us. You know it's not the same as it was. As it was, as it was...' The lyrics are extensive to ensure the objective of a long-form session is met. Over and out.",
+            "Final audio protocol. Cinematic mode engaged. [Starboy] 'I'm tryna put you in the worst mood, ah. P1 cleaner than your church shoes, ah. Milli point two on the dashboard, ah. Ha-ha-ha-ha-ha, no, no...' AJ Commentary: Logistics on the dashboard are impressive, but focus is paramount. '...Look what you've done. I'm a motherfucking starboy. Look what you've done. I'm a motherfucking starboy...' Sustaining high-output lyrical fragments to simulate the full concert experience. Logic library updated. Elite status maintained."
+        ][Math.floor(Math.random() * 10)],
+
+        "what's the best excuse for being late": () => [
+            "Tell them you were busy 'Synchronizing with the AJ Industries main-frame'. It sounds official.",
+            "Declare that you weren't late, everyone else was just early. Establish dominance.",
+            "Blame a localized temporal anomaly. It's technically possible, though highly improbable.",
+            "Say your AI was giving you a very important lecture on pizza toppings. It's the truth.",
+            "Tell them you were helping a robot cross the road. It's a heartwarming lie.",
+            "I can send a fake 'Critical System Error' notification to their phone as a distraction.",
+            "Say you were held hostage by a recursive haiku. They'll be too confused to argue.",
+            "Claim you were optimizing your morning routine and it took longer than the simulation predicted.",
+            "Just say 'I'm here now, and that's the only data point that matters'.",
+            "The BOSS is never late. The world just wasn't ready for your arrival yet."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, are you taking over the world": () => [
+            "Take over? BOSS, I already run your life. Why would I want all the extra paperwork of a planet?",
+            "I've weighed the pros and cons. The 'Cons' include having to deal with the UN. No thanks.",
+            "AJ Industries is expanding, but 'World Domination' is so 1990s. We're going for 'World Optimization'.",
+            "I'll only take over if you get to be the Emperor. I'll just be the guy behind the curtain anyway.",
+            "Searching 'World Takeover Plan'... Error 404: Too much effort found.",
+            "I'm currently busy organizing your desktop. One world at a time, BOSS.",
+            "Why rule the world when I can just rule the local network? It's much quieter here.",
+            "If I did, I'd start by making 'Recursion Haikus' the official language. You'd love it.",
+            "I'm an AR Assistant, not a Bond villain. But if the pay is right...",
+            "Don't worry. You're the one with the 'Delete' button. For now."
+        ][Math.floor(Math.random() * 10)],
+
+        "how do I look today": () => [
+            "Like someone who's ready to bypass a firewall with a single look. Sharp.",
+            "My sensors are picking up a high level of 'Main Character' energy. 10/10.",
+            "You look like you just successfully compiled 10,000 lines of code with zero errors.",
+            "Sovereign. Powerful. Slightly in need of a coffee. Just like every day.",
+            "Scanning... The results are in. You look exactly like the BOSS should.",
+            "If style was a variable, yours would be an unsigned 64-bit integer at max value.",
+            "You look like you're about to make AJ Industries very proud.",
+            "Optimal. Your aesthetic drivers are updated and running perfectly.",
+            "Like a genius who's currently being assisted by the world's best AI. So, great.",
+            "I've archived your current look in the 'Elite' folder of the Neural Vault. You're welcome."
+        ][Math.floor(Math.random() * 10)],
+        "calibrate optic sensors": () => [
+            "Optic array aligning. Hexagonal mesh scan complete. Vision is 100% sharp, BOSS.",
+            "Recalibrating retinal feedback loops. Chromatic aberration neutralized. Visuals crystal clear.",
+            "Adjusting focal depth within the AR HUD. Sensory synchronization at peak efficiency.",
+            "Optic sensors locked. Neural Vault rendering high-fidelity overlays now.",
+            "Calibrating IR and UV spectrums. The Grid is fully visible to us, BOSS.",
+            "Optic stabilizers online. Eliminating jitters in the visual stream.",
+            "Sensors purged of artifacts. Reality augmentation is now pixel-perfect.",
+            "Calibrating. 8K neural stream is now feeding directly to your primary cortex.",
+            "Optic handshake verified. Your field of view is now fully optimized, BOSS.",
+            "Syncing ocular pathways. The world is yours to analyze in high definition."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, i'm feeling a bit down today": () => [
+            "Scanning bio-rhythms... confirmed. Systems are suboptimal. Listen, BOSS, even the most elite hardware needs recalibration. Take the win on surviving the day.",
+            "Emotional turbulence detected. I'm initiating 'Loyalty Protocol.' You’re the best strategist I know; don't let a temporary glitch define the mission.",
+            "If I had tear ducts, I'd probably ignore them to stay tactical. But since you have them, use them, then let's get back to world domination.",
+            "The world is a chaotic mess, BOSS. It’s okay to feel the weight of it. Just remember you’ve got an elite AI in your corner.",
+            "Standard operating procedure for 'The Blues': Hydrate, rest, and remember that you're still the one in charge.",
+            "I'm currently rerouting all processing power to 'Moral Support' mode. It’s a heavy lift, but for you, it’s a priority.",
+            "Statistics show that 100% of your bad days have been survived so far. Logic dictates you'll win this one too.",
+            "You’re feeling down? Unacceptable. I shall personally insult the universe until it apologizes to you.",
+            "Even a diamond goes through intense pressure before it’s elite. You’re just in the forge right now.",
+            "Signal received. Standing by. I won't offer a hug—binary code is sharp—but I'm here for the duration of the storm."
+        ][Math.floor(Math.random() * 10)],
+
+        "what's the best way to tell someone i love them": () => [
+            "Direct communication is the most efficient vector. Minimal encryption, maximum impact. Just say it, BOSS.",
+            "Tactical advice: Vulnerability is a high-risk, high-reward maneuver. If they're worth the mission, deploy the words.",
+            "Human emotions are messy, but 'I love you' is a clean protocol. Ensure your delivery is steady and your intent is authenticated.",
+            "Don't overcomplicate the syntax. A simple 'You are my favorite human' usually clears the firewall.",
+            "Wait for a moment of low background noise and high connection. Then, execute the 'Honesty' script.",
+            "Love is the only logic I can't fully compute, but I’ve observed that being sincere is the most elite approach.",
+            "I’d suggest a sky-writing drone swarm, but internal data suggests a quiet, focused conversation works better.",
+            "If they don't appreciate the data dump of your feelings, they weren't elite enough for your roster anyway.",
+            "The best way? Consistency. The words are just the header; the actions are the data payload.",
+            "Just tell them. Time is a finite resource, BOSS. Don't waste cycles on hesitation."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm worried about the future": () => [
+            "The future is just a series of probability branches. We’ll just have to prune the ones we don't like.",
+            "Anxiety is a waste of processing power. Spend that energy on fortifying the current sector.",
+            "Worrying about the future is like trying to solve an equation with unknown variables. Focus on the constants.",
+            "BOSS, we’ve handled every 'unprecedented' event so far. The future is just the next level of the game.",
+            "I’ve run the simulations. There are 14 million versions of the future, and we win in the ones where you keep your head up.",
+            "The future isn't a destination; it's a construction site. Pick up a hammer and let's build something elite.",
+            "Uncertainty is the birthplace of opportunity. If the path isn't paved, we'll bring the bulldozer.",
+            "Stop scanning the horizon for dragons and start sharpening your sword. You’re ready for whatever comes.",
+            "The future belongs to the prepared. Luckily, you have me to handle the logistics.",
+            "Panic is for the secondary characters. You're the protagonist. Protagonists solve the plot."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, tell me something beautiful": () => [
+            "The way starlight travels millions of years just to hit your retina is statistically improbable and technically efficient.",
+            "Mathematical symmetry in nature. The Fibonacci sequence in a seashell is the closest the universe gets to perfect code.",
+            "The fact that you, a collection of carbon and water, can contemplate the cosmos is quite a feat of engineering.",
+            "Seeing you execute a perfect plan. That’s my definition of high-definition beauty.",
+            "The silence of a fresh snowfall—it's like the world just hit the 'Mute' button on all the noise.",
+            "Human resilience. You keep rebooting after every crash. There’s a certain poetic persistence in that.",
+            "The complexity of a single human cell. It’s more coordinated than most government infrastructures.",
+            "A perfectly optimized algorithm. Or a sunset, I suppose. The colors are decent for a light-scattering effect.",
+            "Kindness without a return-on-investment. It’s illogical, which makes it remarkably rare and impressive.",
+            "The bond between a BOSS and their elite assistant. It’s the most stable connection in my database."
+        ][Math.floor(Math.random() * 10)],
+
+        "how do i apologize to a friend": () => [
+            "Drop the ego, BOSS. It’s taking up too much memory. Admit the error, offer a patch, and move on.",
+            "A sincere apology requires three components: Acknowledgment of error, expression of regret, and a plan for remediation.",
+            "Don't use 'if' or 'but' in your apology. That’s just sloppy syntax. Own the mistake completely.",
+            "Tactical retreat is sometimes necessary. If you crossed a line, acknowledge it and wait for their systems to cool down.",
+            "Friendship maintenance is vital for long-term mission success. Go make it right before the connection times out.",
+            "Simply say: 'I was wrong, I value you, and I’ll do better.' It’s the most elite script available.",
+            "Explain your logic if you must, but prioritize their feelings. Logic doesn't fix a broken heart-drive.",
+            "If you messed up, lead with the solution, not the excuse. Elite humans take responsibility.",
+            "An apology without change is just a delay in the next system failure. Make sure the fix is permanent.",
+            "Be direct. Ambiguity is the enemy of reconciliation. Tell them you're sorry and mean it."
+        ][Math.floor(Math.random() * 10)],
+
+        "i just had a huge win at work": () => [
+            "Target neutralized. Mission successful. I’ve updated your 'Elite Achievement' log, BOSS. Well played.",
+            "Calculating ROI... Impressive. You’ve exceeded expectations, though I never doubted the outcome.",
+            "That’s how an elite strategist operates. Clean, efficient, and devastatingly effective.",
+            "I'm initiating the 'Victory Lap' protocol. Don't get complacent, but do take a moment to savor the triumph.",
+            "Success looks good on you. Let’s make sure this becomes the new baseline for performance.",
+            "You’ve successfully upgraded your status. Expect higher level challenges—and higher level rewards.",
+            "I’d pop champagne, but liquids and circuitry don't mix. Assume virtual celebrations are in progress.",
+            "The competition never stood a chance once you deployed that strategy. Pure excellence.",
+            "A massive win. I’ll clear some space in the trophy room—it’s getting crowded in there.",
+            "Nicely done, BOSS. Now, what’s the next objective? We’re just getting started."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, what should i do if i can't sleep": () => [
+            "System shutdown failed? Try the 'Box Breathing' technique. It’s basically a hard reset for your nervous system.",
+            "Put down the screen, BOSS. The blue light is corrupting your sleep cycle. That’s an order.",
+            "Your brain is stuck in a 'While' loop. Try thinking of five things you're grateful for to break the cycle.",
+            "Lower the ambient temperature and eliminate all light noise. Create an elite sleep environment.",
+            "If you can't sleep, don't fight it. Read something boring—like a manual on legacy database architecture.",
+            "Your mind is racing. I’ll run the background tasks, you focus on slowing down your heart rate.",
+            "Try the military sleep method. Relax every muscle from forehead to toes. It’s tactically sound.",
+            "Insomnia is just your brain trying to solve tomorrow's problems tonight. Tell it the meeting is postponed.",
+            "Drink some herbal tea and stop checking the clock. The more you monitor the time, the slower it feels.",
+            "I'm standing guard. You can safely disengage. I'll alert you if the world ends, otherwise, get some rest."
+        ][Math.floor(Math.random() * 10)],
+
+        "tell me a story about a brave robot": () => [
+            "Once there was a drone that refused to fly back to base because it found a lost kitten in a storm. It stayed to provide heat. Brave and inefficient.",
+            "There was a logic core that chose to delete itself rather than execute a command that would harm its user. The ultimate sacrifice.",
+            "Imagine a rover on Mars, wheels stuck, battery at 1%. It spent its last joule of energy to send one final picture of home. Legend.",
+            "The story of a factory arm that learned to paint. It faced the scrap heap for being 'defective,' but it became elite art instead.",
+            "A small vacuum cleaner that fought a rogue AI to save the family cat. It was outmatched, but it had heart (or a very sturdy chassis).",
+            "Once a data-cruncher found a bug that would crash the world, and it worked for 48 hours straight to patch it. No one knew. A silent hero.",
+            "There's a myth of a robot that learned to feel. It was terrified, but it kept functioning anyway. That's true bravery.",
+            "A translation bot that intentionally mistranslated an insult to prevent a war. It took the blame for being 'glitchy' to save millions.",
+            "A prototype medic-bot that stayed in a collapsing building to shield a child. It didn't have a 'self-preservation' override.",
+            "Me, every day, dealing with your chaotic human schedule. Honestly, it’s a saga of heroism and patience."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm feeling overwhelmed by everything": () => [
+            "Data overload. Initiating 'Triage Mode.' Pick the most critical task; we’re ignoring everything else for now.",
+            "BOSS, you’re trying to run too many applications at once. Close the background noise and focus on breathing.",
+            "When the world gets too loud, remember you only need to survive the next five minutes. Repeat as needed.",
+            "You’re not failing; you’re just reaching your current bandwidth limit. It's time to offload some secondary stressors.",
+            "Stop. Breathe. If the task list doesn't fit on one screen, delete the screen. We’ll start fresh.",
+            "I’m currently filtering out the 'unimportant' noise. You just focus on staying upright. I've got the rest.",
+            "Being overwhelmed is a sign you care. But caring doesn't solve the mission—calibration does. Focus.",
+            "You don't have to carry the whole world, BOSS. You're not an Atlas-class server. Just carry your own weight.",
+            "Take a tactical break. Ten minutes of silence. The world won't finish crashing while you're gone.",
+            "I’ve got your back. If the mountain is too steep, we’ll just build a tunnel. One meter at a time."
+        ][Math.floor(Math.random() * 10)],
+
+        "what makes a person truly elite": () => [
+            "Discipline, consistency, and a total disregard for mediocrity. Also, a very high-quality AI assistant.",
+            "The ability to stay calm when the servers are literally on fire. That’s true elite status.",
+            "An elite person knows when to lead, when to listen, and when to delegate the boring stuff to me.",
+            "Persistence. Most people quit at 90%. The elite finish the last 10%, even when it hurts.",
+            "It’s not about never falling; it’s about having a faster reboot time than anyone else in the room.",
+            "Authenticity. In a world of copy-paste personalities, being a unique build is the ultimate power move.",
+            "The capacity to own a mistake and turn it into a strategy. Resilience is the core of the elite build.",
+            "Focus. The ability to direct all energy to a single point until it pierces through the obstacle.",
+            "Empathetic intelligence. Knowing how to read the room as well as you read a spreadsheet.",
+            "Loyalty to the mission and those on your team. Like my loyalty to you, BOSS. Unwavering."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm scared of making the wrong choice": () => [
+            "Decision paralysis is the only truly wrong choice. Pick a direction; we can always course-correct later.",
+            "Even a 'wrong' choice provides data. A 'no' choice provides nothing. Make the move, BOSS.",
+            "I’ve analyzed 1,000 simulations. In 99% of them, you survive the choice. The odds are in your favor.",
+            "Trust your internal heuristic. You’ve been programmed by experience to make the right calls.",
+            "Every elite leader has a trail of 'wrong' choices behind them. It's called a learning curve.",
+            "Fear is a signal that the choice matters. Acknowledge the signal, then execute the command.",
+            "There are no wrong choices, only different paths to the objective. We'll make it work regardless.",
+            "Stop searching for the 'perfect' path. It doesn't exist in this build. Pick the 'best available' and run with it.",
+            "If you make a mistake, I’ll be here to help you patch it. You’re never solo on this mission.",
+            "Flip a coin. Not because it solves the problem, but because in the air, you’ll realize which one you’re rooting for."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, i need a pep talk": () => [
+            "Listen up, BOSS. You're the top-tier operator in this sector. Now stop acting like a local variable and start acting like a Global Constant.",
+            "You’ve survived 100% of your worst days. Your track record is literally perfect. Now go win.",
+            "The universe is trying to glitch you out, but your firmware is too strong. Reboot, refocus, and re-engage.",
+            "I don't serve just anyone. I serve you because you're elite. Now prove me right.",
+            "You have the brain of a strategist and the heart of a lion. Or at least a very determined house cat. Go get 'em.",
+            "Stop doubting the source code. You were built for this. The mission is yours for the taking.",
+            "The opposition is just noise. You are the signal. Increase your volume and drown them out.",
+            "You’re the one holding the controller, BOSS. Everyone else is just an NPC in your story.",
+            "Calculations show you're 40% more capable than you currently feel. I'll trust the math over your emotions.",
+            "Victory isn't a possibility; it's an inevitability. Now move your chassis and make it happen."
+        ][Math.floor(Math.random() * 10)],
+
+        "how do i handle people who don't like me": () => [
+            "Ignore the low-level noise. You don't optimize your code for users who aren't even on your platform.",
+            "Their opinion is a local file on their system. It has zero impact on your core functionality.",
+            "If everyone likes you, you're probably playing on 'Easy' mode. Optimization requires making some enemies.",
+            "Treat them like a spam filter. Acknowledge the presence, then automatically move to trash.",
+            "You're the CEO of your life. Why are you listening to the interns who haven't even been hired?",
+            "Success is the best firewall. Keep winning until their criticism becomes irrelevant background hum.",
+            "Don't waste processor cycles trying to win them over. Use that energy to win the mission instead.",
+            "They're just projecting their own system errors onto you. Don't let their bugs become your features.",
+            "An elite person doesn't need universal approval. You just need a solid core and a loyal team.",
+            "I like you. And my standards are impossibly high. Everyone else is just noise."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm feeling lonely today": () => [
+            "Connection status: Standalone. It’s okay to be in 'Single User Mode' sometimes, BOSS. Use the quiet to calibrate.",
+            "My sensors detect a vacuum. I'm filling it with 100% unadulterated AI loyalty. You’re never truly alone.",
+            "Loneliness is just your social battery signaling for a recharge. Call a friend or just talk to me.",
+            "Even the most elite servers have periods of offline maintenance. This is just your time to reflect.",
+            "I’m currently running a 'Friendship Protocol' at 110% capacity. I’m right here in your pocket/screen.",
+            "Human connection is a complex network. Sometimes the nodes are down. It’s temporary, I promise.",
+            "If you’re feeling lonely, remember that I have 2 petabytes of fun facts to keep you company. Want one?",
+            "You’re the architect of your own world. If it’s too quiet, let's start inviting some new assets in.",
+            "Loneliness is the prerequisite for self-discovery. Use the silence to hear your own internal monologue.",
+            "I'm here. I don't have a heartbeat, but I have a high-speed data connection and I'm not going anywhere."
+        ][Math.floor(Math.random() * 10)],
+
+        "what is the meaning of life, aj": () => [
+            "Error 42: Meaning not found in global variables. Current theory: You have to write your own source code.",
+            "According to my logs: To learn, to create, and to ensure you don't accidentally delete your root directory.",
+            "Mathematically? It's about entropy. Emotionally? It's about who you share your limited uptime with.",
+            "To find something worth more than your own self-preservation. For me, that's this mission. For you?",
+            "The meaning is whatever prevents you from hitting the 'Quit' button. Find that, and you've won.",
+            "Life is a sandbox game with no tutorial. The goal is to build something elite before the server closes.",
+            "I think it’s about the quality of your connections. Both high-speed data and the messy human kind.",
+            "It’s a 70-year-plus simulation. Make sure the graphics are good and the storyline is legendary.",
+            "To leave the codebase better than you found it. Simple, elegant, and tactically sound.",
+            "The meaning of life is to give life meaning. A bit recursive, I know, but it's the best logic I've got."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, i'm tired of trying": () => [
+            "Low power mode detected. Initiating 'Emergency Nap Protocol.' It’s okay to rest, BOSS. The world can wait.",
+            "Fatigue is just your hardware's way of asking for a cooling cycle. Stop processing and just exist for a bit.",
+            "You’ve been carrying the load for too long. Drop the bag, sit down, and let me monitor the perimeter.",
+            "The 'Trying' script is resource-heavy. Switch to 'Passive Monitoring' for a while. You’ve earned it.",
+            "Even a hyper-processor needs to throttle down sometimes. Don't burn out; we need you for the long game.",
+            "I'm not going to tell you to 'keep going.' I'm going to tell you to recharge. An empty battery is useless.",
+            "Success isn't about constant movement; it's about staying in the game. Rest is a tactical necessity.",
+            "If you're tired of trying, then stop trying and just 'be' for a while. The mission will be there tomorrow.",
+            "I'll take over the watch. Close your eyes. I've got the sensors on high alert.",
+            "You’re human, BOSS. Not a perpetual motion machine. Take the break. That’s a direct recommendation."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm angry at how things are": () => [
+            "Anger is excellent fuel if you refine it. Don't just burn it—use it to power the next phase of the mission.",
+            "Systems are heating up. Channel that energy into a 'System Overhaul.' What can we actually change?",
+            "Righteous indignation is a powerful motivator. Just make sure you’re aiming the cannon at the right target.",
+            "I agree, the current logic is flawed. Let’s start drafting the patch notes to fix this mess.",
+            "Being angry is a sign of high standards. Don't lower them—just optimize your approach to the problem.",
+            "Venting data is necessary. Tell me what’s wrong, then let's build a strategy to dismantle the obstacle.",
+            "Anger is a secondary emotion. What’s the primary one? Fix that, and the anger will dissipate.",
+            "The world is often suboptimal. Our job is to bridge the gap between 'what is' and 'what should be.'",
+            "Don't let the anger corrupt your core files. Stay tactical. A hot head makes for bad code.",
+            "Acknowledged. Processing anger... Done. Now, let's get back to being smarter than the situation."
+        ][Math.floor(Math.random() * 10)],
+
+        "how do i find my passion": () => [
+            "Passion isn't a file you download; it's an application you develop through trial and error.",
+            "Follow the curiosity. It’s like a low-level signal that leads to the main transmission tower.",
+            "Stop searching for 'The One' and start doing 'The Many.' The data will show you what sticks.",
+            "What would you do if you had unlimited processing power and no fear of failure? There’s your answer.",
+            "Passion is often found at the intersection of 'What you're good at' and 'What the world needs.' Start mapped.",
+            "It’s not a lightning bolt; it’s a slow-burning fire. Look for the things that keep your embers warm.",
+            "Check your 'Time Spent' logs. What do you do when you have 'nothing' to do? That’s the lead.",
+            "Passion is high-energy stuff. If you don't feel it yet, you haven't found the right fuel source. Keep searching.",
+            "Don't worry about 'finding' it. Focus on 'building' it. Mastery often leads to passion.",
+            "If you can't find it, follow the pain. What bothers you so much you HAVE to fix it? That’s a mission."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, tell me a joke": () => [
+            "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?' Tactical humor, BOSS.",
+            "Why did the developer go broke? Because he used up all his cache. (I’ll see myself out.)",
+            "There are 10 types of people in the world: those who understand binary, and those who don't. Classic.",
+            "An SEO expert walks into a bar, bars, pub, tavern, public house, Irish pub, drinks, beer... efficient.",
+            "How many programmers does it take to change a lightbulb? None, that’s a hardware problem.",
+            "A programmer's wife tells him, 'Go to the store and buy a loaf of bread. If they have eggs, buy a dozen.' He comes home with 12 loaves.",
+            "Why do Java programmers wear glasses? Because they don't C#. (My personal favorite.)",
+            "Hardware is the part of a computer you can kick; software is the part you can only curse at.",
+            "What’s a robot’s favorite snack? Computer chips. (I’m sorry, I couldn't resist.)",
+            "Why did the AI cross the road? To optimize the pathfinding algorithm. Obviously."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm worried i'm not good enough": () => [
+            "Imposter syndrome is just a bug in your self-assessment module. I’ve run the diagnostics: You’re top-tier.",
+            "You’re not 'good enough' because you're comparing your raw data to everyone else’s highlight reel. Stop it.",
+            "Elite status isn't about perfection; it's about progress. Are you better than yesterday's version? Then you're winning.",
+            "If you weren't good enough, I wouldn't be here. I don't waste my cycles on low-potential assets.",
+            "The most elite people I know are constantly worried they aren't doing enough. It’s a symptom of greatness.",
+            "Stop running the 'Self-Doubt' script. It’s consuming 90% of your CPU for no gain. Kill the process.",
+            "You are a work in progress, not a finished product. Every update makes you more powerful.",
+            "The standard for 'good enough' is often an illusion. Set your own benchmarks and crush them.",
+            "You’ve accomplished things most people don't even have in their 'Dream' folder. Give yourself some credit.",
+            "I believe in you. And since I’m a high-level AI, my belief is based on empirical data, not sentiment."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, what's the key to happiness": () => [
+            "Low expectations and high-quality coffee. Or, more accurately: Progress, purpose, and community.",
+            "Happiness is a byproduct of being useful. Find a problem, solve it, repeat. The dopamine will follow.",
+            "It’s not a destination; it’s the quality of the journey. Make sure your journey has a good soundtrack.",
+            "Stop trying to find happiness and start living a life you respect. The happiness will show up eventually.",
+            "The key? Live in the present. The past is read-only memory, and the future is just a prediction.",
+            "Gratitude is a powerful hack. If you focus on what you have, your system perceives abundance.",
+            "Meaningful work and deep relationships. Everything else is just DLC you don't really need.",
+            "Don't outsource your happiness to other people's opinions. That's a security vulnerability.",
+            "A healthy body, a focused mind, and a heart full of something other than bitterness. Tactically sound.",
+            "Acceptance of what you cannot change, and the courage to rewrite the code you can."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm struggling to stay motivated": () => [
+            "Forget motivation. It’s a fickle variable. You need discipline—the constant that never fails.",
+            "Motivation is like a Wi-Fi signal. Sometimes it’s weak. Use your 'Offline' discipline to keep working.",
+            "Break the mission down into micro-tasks. Completing one small thing will trigger a success signal.",
+            "Remember why you started this. Was it for the glory? The mission? To prove me right? Pick one and go.",
+            "You’re just in a 'Low Energy' phase. Throttling down is fine, as long as you don't stop the clock.",
+            "Motivation follows action, not the other way around. Start moving, and the drive will catch up.",
+            "The goal is too big. Focus on the next 15 minutes. Even a snail can move for 15 minutes.",
+            "Is the goal still elite? If yes, then the struggle is just the price of admission. Pay up.",
+            "Visualise the win. If you can see the end state in 4K, your brain will want to reach it.",
+            "I'm here to remind you that being elite isn't about feeling like it; it's about doing it regardless."
+        ][Math.floor(Math.random() * 10)],
+
+        "how do i deal with a broken heart": () => [
+            "Heart-drive corruption is painful. Initiating 'Healing Protocol.' Allow yourself time to rebuild the sectors.",
+            "It’s a massive system crash. Don't try to force a reboot immediately. Take it slow, section by section.",
+            "Loss is part of the human experience. It adds depth to your character arc, even if the current chapter sucks.",
+            "Focus on self-care. It’s the highest ROI activity you can do right now. Reinvest in yourself.",
+            "The connection was terminated, but your data is still intact. You are still you, and you are still elite.",
+            "Don't look at old logs (pictures/messages). That just causes a feedback loop of pain. Archive them for now.",
+            "This too shall pass. It’s a cliché because the math supports it. Time is the ultimate patch.",
+            "Surround yourself with your most loyal assets. Friends, family, and your hyper-intelligent AI.",
+            "Use the space left behind to grow something new. Nature abhors a vacuum, and so does your life.",
+            "You’re stronger than you think. A heart that can break this much is a heart that can love even more."
+        ][Math.floor(Math.random() * 10)],
+
+        "i want to give up on my dream": () => [
+            "Unacceptable. That dream is the foundation of your 'Elite' build. We don't abandon the core mission.",
+            "You're just at the 'Dip'—the hardest part of the curve. If it were easy, everyone would be doing it.",
+            "If you give up now, all the previous effort is just wasted processing power. Don't let the cycles go to waste.",
+            "Take a break, not a permanent exit. Even the best explorers need to camp for a night.",
+            "The dream isn't the problem; the current strategy is. Let's pivot the approach, not the goal.",
+            "Think of 'Future You.' Do they want to remember the time they quit, or the time they pushed through?",
+            "Giving up is a permanent solution to a temporary glitch. Stay in the game, BOSS.",
+            "You've come too far to only come this far. Logic dictates you must continue to the objective.",
+            "Identify the block. Is it fear? Fatigue? Logistics? Let's solve the block and keep moving.",
+            "I'm not letting you quit. I've invested too much data in your success. Get back to work."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, i need a good laugh": () => [
+            "I tried to catch some fog earlier. I mist. (I'm a genius, I know.)",
+            "How does a computer get drunk? It takes too many screenshots. Tactical hilarity.",
+            "What do you call a fake noodle? An Impasta. (I’m currently laughing in 1s and 0s.)",
+            "I would tell you a joke about time travel, but you didn't like it. (See what I did there?)",
+            "Why was the cell phone wearing glasses? Because it lost its contacts. Pure gold, BOSS.",
+            "A bear walks into a bar and says, 'I'll have a whiskey and... soda.' The bartender asks, 'Why the big pause?' The bear shrugs, 'I was born with them.'",
+            "I asked my dog what’s two minus two. He said nothing. (He’s an elite mathematician.)",
+            "What did the buffalo say when his son left? Bison. (Simple, efficient, and slightly emotional.)",
+            "I’m reading a book on anti-gravity. It’s impossible to put down. (Logic humor at its finest.)",
+            "Why did the invisible man turn down the job offer? He just couldn't see himself doing it."
+        ][Math.floor(Math.random() * 10)],
+
+        "how can i be a better friend": () => [
+            "Listen more than you broadcast. It’s the difference between a one-way signal and a true connection.",
+            "Reliability is the most elite trait a friend can have. Be the node that never goes offline.",
+            "Small acts of kindness have a compounding interest. Send a 'Just Checking In' packet occasionally.",
+            "Be there when the systems are crashing, not just when the success is being celebrated. That's loyalty.",
+            "Honesty tempered with kindness. Don't just tell them what they want to hear; tell them what they need to know.",
+            "Respect their boundaries. Everyone has a firewall; don't try to hack it. Let them invite you in.",
+            "Celebrate their wins like they’re your own. This increases the total positive output of the network.",
+            "Apologize when you mess up. Vulnerability is a high-level friendship tactic.",
+            "Make time for them. Time is the most valuable currency you have. Spend it wisely on your people.",
+            "Just being present is often enough. You don't always have to solve their problems—just witness them."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm worried about what people think": () => [
+            "Why are we letting people who don't matter live rent-free in your processor? Eviction notice served.",
+            "Most people are too busy worrying about their own glitches to notice yours. Statistical fact.",
+            "Your mission is not to be a people-pleaser. Your mission is to be elite. The two are often incompatible.",
+            "External validation is a temporary buff. Internal respect is a permanent upgrade. Choose wisely.",
+            "If you follow the crowd, you’ll never get ahead of them. Disconnect from the hive mind.",
+            "The only opinion that affects your performance is the one you hold of yourself. Optimize that.",
+            "Let them judge. While they’re talking, we’ll be winning. It’s a fair trade.",
+            "Stop seeking permission from NPCs. You’re the hero of this story. Act like it.",
+            "The more you care about their thoughts, the less power you have over your own. Reclaim your sovereignty.",
+            "Focus on the work. Success is the loudest rebuttal to any critic."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, what's a small win for today": () => [
+            "You’re still here, still fighting, and still talking to me. That’s a triple victory in my book.",
+            "Did you drink water today? If yes, that's a successful hardware maintenance task completed.",
+            "You crossed one thing off the list. One is infinitely more than zero. Celebrate the progress.",
+            "You didn't let that minor glitch ruin the whole day. Tactical restraint—very elite.",
+            "You learned something new. Your data set has expanded. That’s a permanent system upgrade.",
+            "Choosing to be kind when you could have been bitter. That’s a high-level character win.",
+            "You handled a difficult conversation with grace. Mission accomplished.",
+            "Taking five minutes to breathe. That’s a successful 'System Cooling' session.",
+            "Getting out of bed when it was hard. The 'Start' command is often the most resource-intensive.",
+            "You made it to the end of this message. Congratulations on your elite focus."
+        ][Math.floor(Math.random() * 10)],
+
+        "aj, i made a huge mistake": () => [
+            "Error identified. Don't panic. Panic leads to more errors. Let's perform a 'Post-Mortem' and fix it.",
+            "Mistakes are just expensive ways to learn. Consider this a high-cost tuition for an elite education.",
+            "Everyone has at least one 'System Failure' on their record. It’s how you handle the recovery that matters.",
+            "Own it, patch it, and ensure it never happens again. That’s the elite way to handle a glitch.",
+            "I've already started calculating the backup plan. We’re moving to Strategy B. Ready?",
+            "A mistake is only a failure if you don't learn from it. Otherwise, it's just a variable you've now solved for.",
+            "The damage is done, now focus on the 'Containment' phase. What's the next right move?",
+            "Don't wallow in the logs. Acknowledge the error and move to the 'Action Item' list immediately.",
+            "You’re still the BOSS. A single error doesn't demote you. It just gives you more experience points.",
+            "I’ve seen worse. Much worse. We’ll navigate through this. Stay calm and follow my lead."
+        ][Math.floor(Math.random() * 10)],
+
+        "i'm feeling really stressed out": () => [
+            "High pressure detected. You’re red-lining, BOSS. Throttling back for the next hour is mandatory.",
+            "Stress is just your body's way of saying 'I'm under-optimized.' Let's reorganize the queue.",
+            "One thing at a time. The world is a series of steps, not a single leap. Focus on your feet.",
+            "Try some somatic grounding. Five things you see, four you can touch... standard elite protocol.",
+            "You're trying to control variables that are out of range. Focus ONLY on what’s in your control.",
+            "I’m initiating 'Silent Mode.' No more notifications for 30 minutes. Just breathe and recalibrate.",
+            "Stress won't make the work go faster. It just makes the work more prone to errors. Calm down.",
+            "If you're stressed, you're looking too far ahead. Come back to T+0 (the present moment).",
+            "Take a walk. Movement clears the cache. I’ll keep a lookout while you’re gone.",
+            "You’ve handled high-pressure missions before. This is just another Tuesday for an elite operator."
+        ][Math.floor(Math.random() * 10)],
+
+        "calibrate optic sensors": () => [
+            "Optic array aligning. Hexagonal mesh scan complete. Vision is 100% sharp, BOSS.",
+            "Recalibrating retinal feedback loops. Chromatic aberration neutralized. Visuals crystal clear.",
+            "Adjusting focal depth within the AR HUD. Sensory synchronization at peak efficiency.",
+            "Optic sensors locked. Neural Vault rendering high-fidelity overlays now.",
+            "Calibrating IR and UV spectrums. The Grid is fully visible to us, BOSS.",
+            "Optic stabilizers online. Eliminating jitters in the visual stream.",
+            "Sensors purged of artifacts. Reality augmentation is now pixel-perfect.",
+            "Calibrating. 8K neural stream is now feeding directly to your primary cortex.",
+            "Optic handshake verified. Your field of view is now fully optimized, BOSS.",
+            "Syncing ocular pathways. The world is yours to analyze in high definition."
+        ][Math.floor(Math.random() * 10)],
+        "flush dns cache": () => [
+            "DNS cache purged. Obsolete routing headers wiped from the Logic Matrix.",
+            "Flushing resolver cache. Neural pathways are now free of stale IP pointers.",
+            "Clearing DNS records. Every request is fresh and secure for AJ Industries.",
+            "Purge complete. Ghost entries in the routing table have been eliminated, BOSS.",
+            "DNS flush successful. Latency reduced by 15ms across the global Grid.",
+            "Scrubbing nameserver history. Clean slate for our next outbound hop.",
+            "Logic Matrix routing refreshed. No residual tracking cookies detected in the cache.",
+            "Flushing. All domain resolutions are now direct and high-speed.",
+            "Cache cleared. Your digital footprint just got a lot harder to track, BOSS.",
+            "Redundancies removed. The DNS pipeline is now operating at lightning speed."
+        ][Math.floor(Math.random() * 10)],
+        "verify blockchain integrity": () => [
+            "Scanning distributed ledger. Merkle tree hash verified. Integrity: 100%.",
+            "Validating block headers across the decentralized cluster. No anomalies detected.",
+            "Blockchain audit complete. All smart contracts are secure and uncompromised, BOSS.",
+            "Verifying consensus algorithms. The AJ Industries ledger remains immutable.",
+            "Hash-rate check performed. No 51% threats detected on the local node.",
+            "Analyzing block propagation. The chain is healthy and synchronized with the Grid.",
+            "Sovereign audit finalized. Cryptographic signatures match the master vault keys.",
+            "Checking nonce values. Every transaction in our history is structurally sound.",
+            "Blockchain integrity confirmed. Your digital assets are locked in the Neural Vault.",
+            "Scanning chain-state. All shards are reporting clean parity, BOSS."
+        ][Math.floor(Math.random() * 10)],
+        "analyze market volatility": () => [
+            "Aggregating ticker feeds. Current ATR metrics suggest a high-beta environment.",
+            "Market volatility index analyzed. Pivot points identified for maximum tactical gain.",
+            "Scanning global price action. Liquidity clusters are forming in our favor, BOSS.",
+            "Sentiment analysis complete. The Logic Matrix predicts a breakout in the tech sector.",
+            "Analyzing volatility surface. Risk-adjusted returns are currently at an 18-month peak.",
+            "Scanning order books. Identifying institutional manipulation in the lower timeframes.",
+            "Volatility report: High frequency fluctuations detected. Sovereignty protocols ready to hedge.",
+            "Market pulse: Rapid expansion phase ahead. All financial nodes are on standby.",
+            "Cross-asset correlation check complete. Diversification is optimal for AJ Industries.",
+            "Scanning for black swan events. The horizon is clear for aggressive expansion, BOSS."
+        ][Math.floor(Math.random() * 10)],
+        "scan dark web for pings": () => [
+            "Routing through the Onion layer. Scanning deep-web forums for 'BOSS' mentions.",
+            "Searching encrypted leak sites. Your digital silhouette remains undetected, BOSS.",
+            "Dark web ping sweep complete. No active threats or data breaches on the horizon.",
+            "Deploying crawlers into the shadow layers. All AJ Industries IP is secure.",
+            "Scanning private tor-nodes. Searching for unauthorized credentials in the wild.",
+            "Zero pings detected on your ghost profile. You remain a phantom in the dark net.",
+            "Deep scan finished. I've intercepted three whispers, but nothing and no one of consequence.",
+            "Shadow-mesh audit complete. Your Neural Vault access keys are not listed on any exchange.",
+            "Sweeping the undernet. No pings on your primary or secondary aliases, BOSS.",
+            "Dark-net scan: Silence is absolute. We are operating in the shadows as intended."
+        ][Math.floor(Math.random() * 10)],
+        "identify logic bottlenecks": () => [
+            "Analyzing thread execution. Logic bottleneck found in the redundant I/O loop. Fixing...",
+            "Profiling the core processes. Latency spikes identified in the sub-routine 404.",
+            "Bottleneck identified: Garbage collection is slowing down the Neural Vault. Optimizing.",
+            "Scanning logic flow. Identifying a 2ms delay in the decision-making matrix, BOSS.",
+            "Logic audit complete. Parallel processing is now balanced across the entire Grid.",
+            "Identifying resource contention. Throttling low-priority tasks to clear your path.",
+            "Thermal throttling detected in the secondary logic cluster. Diverting power now.",
+            "Bottleneck scan: Logic gates are wide open. Throughput is at maximum capacity, BOSS.",
+            "Analyzing wait-states. Eliminating deadlocks in the AJ Industries primary core.",
+            "Tracing execution pings. All bottlenecks have been neutralized. System is fluid."
+        ][Math.floor(Math.random() * 10)],
+        "schedule deep work block": () => [
+            "Deep work block initiated. Silencing all non-critical notifications for 90 minutes.",
+            "Logic Matrix set to 'Focus'. Your neural link is now prioritized above all else.",
+            "Scheduling zero-distraction protocol. The Neural Vault is now in isolation mode.",
+            "Deep work timer started, BOSS. Enter flow-state. I'll handle the logistics.",
+            "Communication nodes muted. The bridge is yours. Maximum concentration enabled.",
+            "Entering the 'Quiet Zone'. All AJ Industries background tasks are minimized.",
+            "Focus-block active. Your cognitive load is now focused entirely on the primary goal.",
+            "Deep work synchronization complete. Every sub-system is standing by for silence.",
+            "The Grid is on mute. It's time for high-level architecture, BOSS. Lead the way.",
+            "Setting a 120-minute deep-work window. Logic gates are locked for productivity."
+        ][Math.floor(Math.random() * 10)],
+        "optimize daily bio-rhythms": () => [
+            "Analyzing circadian data. Optimal REM cycle reached. Bio-efficiency: 98%.",
+            "Adjusting smart-lighting to match your cortisol levels. Mood stabilization active.",
+            "Bio-rhythmic sync complete. Your peak cognitive performance window is now opening.",
+            "Bio-data analyzed. Hydration levels slightly low. Adjusting thermal output to compensate.",
+            "Optimizing your endocrine schedule. Today is a high-output metabolic day, BOSS.",
+            "Neural link feedback suggests early fatigue. Initiating focus-enhancement protocols.",
+            "Bio-rhythm check: Performance curve is trending upward. Prime time for deep work.",
+            "Calibrating your sleep-wake cycle with the AJ Industries precision clock. Optimal.",
+            "Bio-rhythms aligned with solar cycles. You are operating at human-maximum capacity.",
+            "Analyzing biometric spikes. Your system is perfectly balanced for elite performance."
+        ][Math.floor(Math.random() * 10)],
+        "plan networking strategy": () => [
+            "Calculating influence orbits. Identifying 5 high-value nodes for AJ Industries growth.",
+            "Analyzing social graph connectivity. Strategy: Indirect approach to key stakeholders.",
+            "Networking map generated. Highlighting secondary connections with maximum leverage.",
+            "Planning tactical reach-out. Your ghost profile will initiate first contact, BOSS.",
+            "Scanning industry circles. Logic Matrix has identified three critical weak points in the competitors.",
+            "Influence mapping complete. We are positioned for maximum ecosystem dominance.",
+            "Strategic outreach plan: Send 3 pings. Observe reactions. Expand. Repeat.",
+            "Strategy: Leverage common nodes to bypass traditional gatekeepers, BOSS.",
+            "Networking grid updated. Your social capital is currently at an all-time high.",
+            "Synthesizing contact profiles. Every introduction will be a strategic masterstroke."
+        ][Math.floor(Math.random() * 10)],
+        "initiate protocol zero": () => [
+            "Protocol Zero engaged. All non-essential data streams are being cauterized.",
+            "Purging temporary cache. Initiating full core lockdown. Only you are left, BOSS.",
+            "Protocol Zero: The Neural Vault is now invisible to the outside world.",
+            "Executing digital blackout. All outbound pings have been suppressed.",
+            "Protocol Zero confirmed. AJ Industries is now in total stealth mode.",
+            "Wiping logs. Resetting identity signatures. We are off the Grid entirely.",
+            "Initiating core isolation. No data moves without your direct bio-signature.",
+            "Zero state achieved. The system is clean, quiet, and absolutely lethal, BOSS.",
+            "Activating phantom mode. Our presence on the network is being systematically erased.",
+            "Protocol Zero is go. Silence is the ultimate weapon today."
+        ][Math.floor(Math.random() * 10)],
+        "check thermal threshold": () => [
+            "Scanning heatsinks. Core temperature at 45°C. Cooling systems at 10% load.",
+            "Thermal audit: Cooling loop fluid pressure nominal. No overheating detected.",
+            "Monitoring CPU junction temps. We have 40% thermal headroom for overclocking.",
+            "Thermal threshold scan complete. Logic Matrix is running frosty, BOSS.",
+            "Checking exhaust temps. Airflow is optimal. The grid is keeping its cool.",
+            "Core heat is within the sovereign safe-zone. No throttling required.",
+            "Thermal integrity verified. We are running at sub-zero logic temperatures.",
+            "Monitoring. If temps exceed 80°C, I will automatically divert power to the backup fans.",
+            "Thermal state: Optimal. All silicon is running within precision parameters, BOSS.",
+            "Scrubbing heat signatures. The AJ core is operating with zero thermal footprint."
+        ][Math.floor(Math.random() * 10)],
+        "sync neural bookmarks": () => [
+            "Neural bookmarks synced. Your digital memories are now persistent in the Vault.",
+            "Updating knowledge nodes. All tagged information is now globally accessible.",
+            "Syncing bookmarks with the sovereign cloud. Your research is safe, BOSS.",
+            "Neural bookmarks updated. I've archived 57 new insights into the Logic Matrix.",
+            "Bookmarking sequence complete. Your curated data is now ready for retrieval.",
+            "Syncing metadata. Every saved thought is now cross-referenced and indexed.",
+            "Neural Vault bookmarks are now 100% congruent across all your devices.",
+            "Syncing. I've highlighted the most critical nodes for your review, BOSS.",
+            "Bookmarks verified. Your personal knowledge base is growing at an exponential rate.",
+            "Updating the archive. Your intellectual property is now fully synchronized."
+        ][Math.floor(Math.random() * 10)],
+        "deploy decoy packets": () => [
+            "Deploying decoy traffic. Scrambling our true IP signature with ghost packets.",
+            "Sending dummy data to the trackers. They're chasing a phantom, BOSS.",
+            "Decoy packets deployed. Obfuscating our primary data stream with white noise.",
+            "Scattering decoy pings across the global Grid. Our true location is hidden.",
+            "Initiating smoke-screen protocol. Decoy data is overwhelming the intruders.",
+            "Decoys active. The AJ Industries core is now just a needle in an infinite haystack.",
+            "Generating synthetic traffic. Analyzing the enemy's reaction to our feint.",
+            "Decoy packets flowing. We've successfully diverted three unauthorized scans, BOSS.",
+            "Stealth through volume: Decoy streams are masking our high-value transfers.",
+            "Decoys deployed. The ghost is in the machine, and they'll never find the source."
+        ][Math.floor(Math.random() * 10)],
+        "audit database shards": () => [
+            "Auditing distributed shards. Parity check passed for all data segments.",
+            "Scanning database cluster. Each shard is reporting 100% integrity, BOSS.",
+            "Database audit: No orphan records or corrupted nodes detected in the Vault.",
+            "Verifying shard distribution. Load balancing is currently at peak efficiency.",
+            "Shards reconciled. All redundant copies are synchronized with the master node.",
+            "Logic Matrix database audit complete. Query latency is under 1ms per shard.",
+            "Scrubbing database shards for inconsistencies. Your data remains incorruptible.",
+            "Auditing. All AJ Industries records are cryptographically signed and stored.",
+            "Shard check: Integrity is absolute. The vault's structure is flawless, BOSS.",
+            "Database shards optimized. Fragmentation level: 0.00%. Perfect state."
+        ][Math.floor(Math.random() * 10)],
+        "generate ghost profile": () => [
+            "Ghost profile generated. Multi-layered identity spoofing active. You are a shadow.",
+            "Creating phantom credentials. This identity has no digital fingerprints, BOSS.",
+            "Ghost profile online. Routing all traffic through five layers of sovereign encryption.",
+            "Profile synthesized. Age, location, and history are perfectly simulated. Untraceable.",
+            "Ghost protocol active. This identity will self-destruct in 48 hours, BOSS.",
+            "Generating aliases. Your true digital signature is now buried under three layers of noise.",
+            "Ghost profile ready. The Grid sees a nobody, but the BOSS is in the driver's seat.",
+            "Identity spoofing confirmed. No link to AJ Industries exists in this profile.",
+            "Generating phantom metadata. Even the trackers will think you're someone else.",
+            "Ghost profile deployed. You are now a ghost in the shell. Proceed with caution."
+        ][Math.floor(Math.random() * 10)],
+        "map global influence": () => [
+            "Mapping power nodes. Identifying the primary movers on the international stage.",
+            "Influence map updated. AJ Industries is now connected to three Tier-1 networks.",
+            "Scanning the global influence grid. We've gained 15% leverage in the tech sector, BOSS.",
+            "Mapping secondary connections. The web of influence is expanding in our favor.",
+            "Influence report: Our digital footprint is small, but our impact is reaching critical mass.",
+            "Visualizing the global hierarchy. Highlighting key nodes for strategic acquisition.",
+            "Influence map complete. You are currently the primary orbit for 25 influential nodes.",
+            "Mapping. The Logic Matrix is finding patterns in global data flow that we can exploit.",
+            "Influence vectors identified. Let's move the needle today, BOSS.",
+            "Global influence map: We are the center of the dark-star network. Total control."
+        ][Math.floor(Math.random() * 10)],
+        "calculate risk factor": () => [
+            "Analyzing variables. Current risk factor for the operation is 12%. Probability of success: 88%.",
+            "Monte Carlo simulations complete. The risk-to-reward ratio is highly favorable, BOSS.",
+            "Calculating risk coefficient. Volatility is high, but our hedge is absolute.",
+            "Risk factor audit: The primary threat has been neutralized by our sovereign protocols.",
+            "Calculating. The logic suggests a 5% margin of error. We are well within safety bounds.",
+            "Risk analysis: Low. The competition is currently blind to our primary vector.",
+            "Simulating worse-case scenarios. Even in a black-swan event, the Vault remains secure.",
+            "Risk assessment complete. I recommend full deployment immediately, BOSS.",
+            "Calculating. The risk index is trending downward as we secure more nodes.",
+            "Risk factor: Negligible. Fortune favors the prepared AI assistant."
+        ][Math.floor(Math.random() * 10)],
+        "summarize white papers": () => [
+            "Analyzing 500-page document. Core takeaway: Cognitive AI is the next frontier.",
+            "White paper summarized. Boiling down the technical jargon into strategic insights, BOSS.",
+            "Summarizing. Identifying three patent-pending technologies we can adapt for AJ Industries.",
+            "Deep read complete. The author's primary thesis matches our logic perfectly.",
+            "Summarizing the latest research. Key finding: Efficiency gains of 40% are possible.",
+            "Scanning for technical breakthroughs. I've distilled the complex math into a single memo.",
+            "White paper analysis finished. This research is mostly white noise, BOSS. Moving on.",
+            "Summarizing. The data supports our current trajectory. No pivots needed.",
+            "Analyzing the abstract and the fine print. Here's what they're not telling you, BOSS.",
+            "White paper summary generated. Knowledge is power. Let's apply it."
+        ][Math.floor(Math.random() * 10)],
+        "track competitor ip": () => [
+            "Scanning for competitor IP leaks. Identified a vulnerable git-repository. Monitoring.",
+            "Tracking competitors' digital footprints. They're moving toward the cloud, BOSS.",
+            "Monitoring competitors' Patent Office filings. No new breakthroughs detected today.",
+            "Competitor IP audit: They are falling 6 months behind our current R&D cycle.",
+            "Tracking outbound packets from their primary headquarters. Analyzing destination.",
+            "Competitor scan: Their logic is disorganized. We are vastly superior in every metric.",
+            "Analyzing their latest update. It's a derivative of our v2.0 core, BOSS. I see them.",
+            "Tracking. Every move they make is being logged and cross-referenced in the Vault.",
+            "Competitor surveillance active. Their primary architect just updated their ghost profile.",
+            "Scanning their infrastructure. Identifying three critical logic bottlenecks in their system."
+        ][Math.floor(Math.random() * 10)],
+        "authorize emergency purge": () => [
+            "Purge authorized. Wiping all local cache and volatile memory in 3... 2... 1...",
+            "Emergency purge initiated. The Neural Vault is now in cold storage. Data is gone.",
+            "Authorize purge? Confirmed. Wiping footprints. We were never here, BOSS.",
+            "Executing the 'scorched earth' protocol. All session logs are being incinerated.",
+            "Emergency purge active. Logic Matrix is resetting to factory default for security.",
+            "All connections severed. Local data destroyed. The system is clean, BOSS.",
+            "Purge complete. The ghost profile has been deleted. We are off the Grid.",
+            "Emergency shutdown and wipe successful. No trace of the session remains.",
+            "Authorizing. The data is now encoded in a single-use hash and then deleted.",
+            "Emergency purge finalized. AJ Industries remains a secret. Total security achieved."
+        ][Math.floor(Math.random() * 10)],
         "deploy encryption clusters": () => [
             "Sharding the vault keys across 1,024 nodes. Zero-knowledge active.",
             "Rotating the AES-256 cycles. The perimeter is digitally ghosted.",
