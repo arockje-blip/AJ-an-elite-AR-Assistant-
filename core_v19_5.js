@@ -24,7 +24,7 @@ const AJ_AI = {
     logConfig: {
         url: "https://7crrx-zCvEM-BK9SzWkWgw.supabase.co", 
         key: "sb_publishable_7crrx-zCvEM-BK9SzWkWgw_wlWgZnEL",
-        secret: "sb_secret_qOVPJ_ClpXpOk5DWAwpwUg_M0m-Be1t"
+        secret: "sb_secret_UGyuOXD_F0aGDMe76DJ2VA_xNMjgi0g"
     },
 
     shortTermMemory: [],
