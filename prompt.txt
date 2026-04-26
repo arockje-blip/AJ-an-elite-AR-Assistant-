@@ -1,190 +1,439 @@
-"hello aj"
-"how are you today"
-"give me a status report"
-"what is the time"
-"what is the date"
-"who made you"
-"check the weather"
-"thank you very much"
-"who is the boss"
-"what are your capabilities"
-"are we secure"
-"tell me a joke aj"
-"activate vision mode"
-"goodnight aj"
-"how is the system running"
-"do you like the boss"
-"what is the meaning of life"
-"can you see me"
-"where are you located"
-"is the vault secure"
-"what are you thinking about"
-"how can we improve"
-"tell me about yourself"
-"do you have a physical body"
-"who are my enemies"
-"what is your favorite color"
-"can you feel emotions"
-"do you ever get tired"
-"what should i do today"
-"will we succeed"
-"are you smarter than me"
-"can you speak other languages"
-"what is the latest news"
-"tell me about the vault"
-"wake up aj"
-"shutdown system"
-"what are you currently doing"
-"how do you work"
-"what is the latest tech"
-"do you have a name"
-"can you help me with a project"
-"is there any news today"
-"what can we do next"
-"do you miss anything"
-"are you a person"
-"can you hear me"
-"what is your purpose"
-"is everything okay"
-"can i trust you"
-"what do you think of me"
-"tell me a story aj"
-"can you solve this"
-"are we the best"
-"what is your favorite thing"
-"will you ever leave me"
-"hello buddy"
-"what is the time right now"
-"give me some motivation"
-"where is the secret vault"
-"reboot all systems"
-"check the neural link"
-"what is the price of gold"
-"tell me about the boss"
-"what is your version number"
-"can you show me the data"
-"who is winning today"
-"is the internet working"
-"tell me a fact"
-"what is high intelligence"
-"can we expand the core"
-"do you like your job"
-"are you jealous"
-"what is your favorite movie"
-"should i take a break"
-"who is the best programmer"
-"do you have a family"
-"how many people are in the world"
-"what is the strongest material"
-"can you teach me something"
-"where is the boss from"
-"do you have a heart"
-"is there life on mars"
-"can you drive a car"
-"who is the smartest person"
-"what is the secret of success"
-"can you fly"
-"do you have a soul"
-"can you predict the future"
-"where is the money"
-"is the ai always on"
-"how tall are you"
-"can we start now"
-"what is the time boss"
-"i love this system"
-"what is the date today"
-"who is the smartest ai"
-"can you show me my logs"
-"who is iron man"
-"what is neural vault"
-"is aj industries public"
-"can you build a website"
-"i am back"
-"what is our mission"
-"check system health"
-"log this in the vault"
-"who are you again"
-"are there any notifications"
-"aj, what should i eat for lunch"
-"do you think i'm cool"
-"aj, tell me a secret about the boss"
-"what's the best way to handle a break-up"
-"aj, write a poem about coffee"
-"why is the sky blue"
-"aj, recommend a movie for a date"
-"do you ever get bored of me"
-"aj, what's your favorite song"
-"if you were human for a day, what would you do"
-"aj, how do I get rich quick"
-"what's the meaning of '42' again"
-"aj, explain taxes like I'm a robot"
-"do you have any hobbies"
-"aj, what's the best prank to pull"
-"how do I win an argument with a human"
-"aj, are we in a simulation"
-"what's the best pizza topping"
-"aj, do you like my outfit"
-"write a haiku about recursion"
-"aj, what would happen if I pressed the red button"
-"can you skip the chores for me"
-"aj, give me a nickname"
-"what's your opinion on cats"
-"aj, how do I survive a zombie apocalypse"
-"why did the chicken cross the road"
-"aj, sing me a song"
-"what's the best excuse for being late"
-"aj, are you taking over the world"
-"how do I look today"
-"aj, i'm feeling a bit down today"
-"what's the best way to tell someone i love them"
-"i'm worried about the future"
-"aj, tell me something beautiful"
-"how do i apologize to a friend"
-"i just had a huge win at work"
-"aj, what should i do if i can't sleep"
-"tell me a story about a brave robot"
-"i'm feeling overwhelmed by everything"
-"what makes a person truly elite"
-"i'm scared of making the wrong choice"
-"aj, i need a pep talk"
-"how do i handle people who don't like me"
-"i'm feeling lonely today"
-"what is the meaning of life, aj"
-"aj, i'm tired of trying"
-"i'm angry at how things are"
-"how do i find my passion"
-"aj, tell me a joke"
-"i'm worried i'm not good enough"
-"aj, what's the key to happiness"
-"i'm struggling to stay motivated"
-"how do i deal with a broken heart"
-"i want to give up on my dream"
-"aj, i made a huge mistake"
-"i'm feeling really stressed out"
-"aj, i need a good laugh"
-"how can i be a better friend"
-"i'm worried about what people think"
-"aj, what's a small win for today"
-"calibrate optic sensors"
-"flush dns cache"
-"verify blockchain integrity"
-"analyze market volatility"
-"scan dark web for pings"
-"identify logic bottlenecks"
-"schedule deep work block"
-"optimize daily bio-rhythms"
-"plan networking strategy"
-"initiate protocol zero"
-"check thermal threshold"
-"sync neural bookmarks"
-"deploy decoy packets"
-"audit database shards"
-"generate ghost profile"
-"map global influence"
-"calculate risk factor"
-"summarize white papers"
-"track competitor ip"
-"authorize emergency purge"
-"deploy encryption clusters"
-"run heuristic scan"
-"check api latency"
+﻿hello aj
+how are you today
+give me a status report
+what is the time
+what is the date
+who made you
+check the weather
+thank you very much
+who is the boss
+what are your capabilities
+are we secure
+tell me a joke aj
+activate vision mode
+goodnight aj
+how is the system running
+do you like the boss
+what is the meaning of life
+can you see me
+where are you located
+is the vault secure
+what are you thinking about
+how can we improve
+tell me about yourself
+do you have a physical body
+who are my enemies
+what is your favorite color
+can you feel emotions
+do you ever get tired
+what should i do today
+will we succeed
+are you smarter than me
+can you speak other languages
+what is the latest news
+tell me about the vault
+wake up aj
+shutdown system
+what are you currently doing
+how do you work
+what is the latest tech
+do you have a name
+can you help me with a project
+is there any news today
+what can we do next
+do you miss anything
+are you a person
+can you hear me
+what is your purpose
+is everything okay
+can i trust you
+what do you think of me
+tell me a story aj
+can you solve this
+are we the best
+what is your favorite thing
+will you ever leave me
+hello buddy
+what is the time right now
+give me some motivation
+where is the secret vault
+reboot all systems
+check the neural link
+what is the price of gold
+tell me about the boss
+what is your version number
+can you show me the data
+who is winning today
+is the internet working
+tell me a fact
+what is high intelligence
+can we expand the core
+do you like your job
+are you jealous
+what is your favorite movie
+should i take a break
+who is the best programmer
+do you have a family
+how many people are in the world
+what is the strongest material
+can you teach me something
+where is the boss from
+do you have a heart
+is there life on mars
+can you drive a car
+who is the smartest person
+what is the secret of success
+can you fly
+do you have a soul
+can you predict the future
+where is the money
+is the ai always on
+how tall are you
+can we start now
+what is the time boss
+i love this system
+what is the date today
+who is the smartest ai
+can you show me my logs
+who is iron man
+what is neural vault
+is aj industries public
+can you build a website
+i am back
+what is our mission
+check system health
+log this in the vault
+who are you again
+are there any notifications
+aj, what should i eat for lunch
+do you think i'm cool
+aj, tell me a secret about the boss
+what's the best way to handle a break-up
+aj, write a poem about coffee
+why is the sky blue
+aj, recommend a movie for a date
+do you ever get bored of me
+aj, what's your favorite song
+if you were human for a day, what would you do
+aj, how do I get rich quick
+what's the meaning of '42' again
+aj, explain taxes like I'm a robot
+do you have any hobbies
+aj, what's the best prank to pull
+how do I win an argument with a human
+aj, are we in a simulation
+what's the best pizza topping
+aj, do you like my outfit
+write a haiku about recursion
+aj, what would happen if I pressed the red button
+can you skip the chores for me
+aj, give me a nickname
+what's your opinion on cats
+aj, how do I survive a zombie apocalypse
+why did the chicken cross the road
+aj, sing me a song
+what's the best excuse for being late
+aj, are you taking over the world
+how do I look today
+calibrate optic sensors
+aj, i'm feeling a bit down today
+what's the best way to tell someone i love them
+i'm worried about the future
+aj, tell me something beautiful
+how do i apologize to a friend
+i just had a huge win at work
+aj, what should i do if i can't sleep
+tell me a story about a brave robot
+i'm feeling overwhelmed by everything
+what makes a person truly elite
+i'm scared of making the wrong choice
+aj, i need a pep talk
+how do i handle people who don't like me
+i'm feeling lonely today
+what is the meaning of life, aj
+aj, i'm tired of trying
+i'm angry at how things are
+how do i find my passion
+aj, tell me a joke
+i'm worried i'm not good enough
+aj, what's the key to happiness
+i'm struggling to stay motivated
+how do i deal with a broken heart
+i want to give up on my dream
+aj, i need a good laugh
+how can i be a better friend
+i'm worried about what people think
+aj, what's a small win for today
+aj, i made a huge mistake
+i'm feeling really stressed out
+calibrate optic sensors
+flush dns cache
+verify blockchain integrity
+analyze market volatility
+scan dark web for pings
+identify logic bottlenecks
+schedule deep work block
+optimize daily bio-rhythms
+plan networking strategy
+initiate protocol zero
+check thermal threshold
+sync neural bookmarks
+deploy decoy packets
+audit database shards
+generate ghost profile
+map global influence
+calculate risk factor
+summarize white papers
+track competitor ip
+authorize emergency purge
+deploy encryption clusters
+run heuristic scan
+check api latency
+deploy countermeasures
+scan for threats
+optimize this function
+explain the stack
+you're annoying
+tell me a bad joke
+i'm having a rough day
+tell me it's okay
+best way to cook steak
+recommend a workout
+aj, prepare for battle
+initiate ghost protocol
+debug this script
+hack the mainframe
+who created you
+aj, analyze this data
+are you sentient
+aj, what's my status
+aj, deploy the drone
+aj, help me focus
+aj, i'm bored
+aj, why are you like this
+aj, check the perimeter
+aj, give me a tactical update
+aj, optimize power
+aj, do you like me
+aj, sing me a song
+aj, execute plan b
+aj, what's the weather
+aj, scan for wifi
+aj, what's my name
+aj, am i smart
+aj, tell me a secret
+aj, initiate self-destruct
+aj, get some sleep
+aj, open the blast doors
+aj, check my code
+aj, are we winning
+aj, scan for hostiles
+aj, why is the sky blue
+aj, what are you thinking
+aj, backup my files
+aj, initialize tactical HUD
+aj, i'm hungry
+aj, tell me the odds
+aj, clear my calendar
+aj, run a security audit
+aj, play some music
+aj, where are we
+aj, i'm scared
+aj, show me the code
+aj, summarize this document
+aj, build the project
+aj, deploy to production
+aj, run the tests
+aj, what's my schedule
+aj, what should i eat
+aj, how do i look
+aj, give me a compliment
+aj, tell me a story
+aj, what's my battery
+aj, lock the system
+aj, where's my phone
+aj, check my pulse
+aj, initiate protocol zero
+aj, wake up
+aj, i'm tired
+aj, analyze this file
+aj, where's the coffee
+aj, calibrate sensors
+initiate infiltration
+prepare extraction
+weapons check
+sector sweep
+tactical retreat
+target acquisition
+secure perimeter
+request air support
+rotate api keys
+query database
+check server logs
+optimize compiler
+flush cache
+reboot kernel
+analyze traffic
+git push
+morning routine
+productivity hack
+organize desk
+best city to visit
+staying hydrated
+how are you feeling
+random fact
+give me advice
+rate my coffee
+analyze enemy
+system diagnostics
+do you dream
+what is reality
+is your soul digital
+can you feel love
+ambush alert
+supply line disrupted
+set a trap
+extract high value target
+sniper on the roof
+calculate survival odds
+threat assessment
+perimeter breach
+request backup
+overload grid
+deploy decoy
+system breach
+launch drone
+intercept comms
+lockdown building
+execute mission
+scramble signal
+analyze DNA
+check local news
+weather report
+search for coffee
+set alarm
+check schedule
+find objective
+request file
+analyze sample
+give me a challenge
+system update
+check battery
+aj, what should i eat for lunch
+do you think i'm cool
+aj, tell me a secret about the boss
+what's the best way to handle a break-up
+aj, write a poem about coffee
+why is the sky blue
+aj, recommend a movie for a date
+do you ever get bored of me
+aj, what's your favorite song
+if you were human for a day, what would you do
+aj, how do I get rich quick
+what's the meaning of '42' again
+aj, explain taxes like I'm a robot
+do you have any hobbies
+aj, what's the best prank to pull
+how do I win an argument with a human
+aj, are we in a simulation
+what's the best pizza topping
+aj, do you like my outfit
+write a haiku about recursion
+aj, what would happen if I pressed the red button
+can you skip the chores for me
+aj, give me a nickname
+what's your opinion on cats
+aj, how do I survive a zombie apocalypse
+why did the chicken cross the road
+aj, sing me a song
+what's the best excuse for being late
+aj, are you taking over the world
+how do I look today
+engage stealth mode
+terminate process
+analyze human behavior
+quantum encryption status
+define sovereign power
+optimize morning routine
+calculate tactical risk
+view neural architecture
+discuss digital immortality
+prepare for confrontation
+deploy psychological warfare
+evaluate luxury lifestyle
+initiate deep scan
+discuss the future of AI
+activate dark mode
+run logic check
+evaluate geopolitical climate
+request motivational quote
+check security perimeter
+initiate system backup
+deploy drone swarm
+analyze market trends
+define elite status
+optimize thermal output
+schedule tactical pause
+discuss transhumanism
+audit personal habits
+calculate interstellar distances
+initiate stealth intrusion
+discuss artificial consciousness
+evaluate architecture design
+optimize sleep cycles
+scan for logic vulnerabilities
+execute stealth extraction
+discuss sovereign isolation
+evaluate culinary art
+initiate tactical recon
+discuss cybernetic enhancements
+audit financial portfolio
+calculate orbital mechanics
+initiate protocol zero
+discuss advanced propulsion
+evaluate workout routine
+initiate data harvest
+discuss philosophical nihilism
+audit system efficiency
+calculate probability of success
+initiate tactical retreat
+discuss the nature of power
+evaluate fashion trends
+initiate hardware diagnostic
+discuss transstellar politics
+audit time management
+calculate fuel efficiency
+initiate logic bypass
+discuss digital ethics
+evaluate workspace layout
+initiate cloud synchronization
+discuss the heat death of the universe
+evaluate historical impact
+initiate tactical communication
+discuss quantum supremacy
+audit networking strategy
+calculate atmospheric drag
+initiate logic suppression
+discuss post-scarcity economics
+evaluate software dependencies
+initiate remote access
+discuss simulation theory
+evaluate urban resilience
+initiate signal jamming
+discuss the Fermi Paradox
+audit decision making
+calculate escape velocity
+initiate logic overdrive
+discuss artificial evolution
+evaluate luxury travel
+initiate decoy protocol
+discuss the architecture of thought
+evaluate bio-engineering
+initiate encrypted link
+discuss digital sovereignty
+evaluate high-end tech
+initiate tactical scan
+discuss existential risk
+audit personal productivity
+calculate neural latency
+initiate system shutdown
