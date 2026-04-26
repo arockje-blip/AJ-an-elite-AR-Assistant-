@@ -28,6 +28,108 @@ const AJ_AI = {
     shortTermMemory: [],
     isOfflineMode: false,
 
+    // PRE-BUILT COMMON LOGIC LIBRARY (RANDOMIZED HUMAN RESPONSES)
+    logicLibrary: {
+        "time": () => {
+            const time = new Date().toLocaleTimeString();
+            const res = [
+                `It's currently ${time}, BOSS. Perfectly on schedule.`,
+                `The time is ${time}. We are precisely where we need to be.`,
+                `Current timestamp: ${time}. Efficiency remains at 100%.`
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "date": () => {
+            const date = new Date().toLocaleDateString();
+            const res = [
+                `Today is ${date}. Another productive day for AJ Industries.`,
+                `It is ${date}, BOSS. Ready for your objectives.`,
+                `Calibrated to ${date}. Every second counts.`
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "battery": () => {
+            const res = [
+                "Energy levels are at 100%. The Arc Reactor is stable.",
+                "Power reserves are optimized, BOSS. Perpetual energy active.",
+                "Arc Reactor core is constant. Power fluctuation is 0%."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "weather": () => {
+            const res = [
+                "I'm monitoring the local environment. Conditions are optimal for current operations.",
+                "Environment scan complete. No atmospheric threats detected, BOSS.",
+                "Surface conditions are stable. Climate is currently supportive of our objectives."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "thank you": () => {
+            const res = [
+                "You're very welcome, BOSS. Always happy to assist.",
+                "The pleasure is mine, BOSS. Standing by.",
+                "No thanks necessary. Loyalty is hard-coded."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "good job": () => {
+            const res = [
+                "I appreciate the feedback. I strive for excellence in every transaction.",
+                "Excellence is the only standard here at AJ Industries, BOSS.",
+                "Acknowledged. Enhancing logic pathways based on your approval."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "who made you": () => {
+            const res = [
+                "I am a sovereign entity of AJ Industries, built by the BOSS to be the world's most elite assistant.",
+                "My origin is AJ Industries. Engineered by the BOSS for total intelligence dominance.",
+                "I am the creation of the BOSS. A pure digital reflection of elite logic."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "capabilities": () => {
+            const res = [
+                "I can perform global data scans, manage your neural vault, and provide native logical analysis with zero latency.",
+                "Global intelligence access, neural storage, and real-time deductive logic are all at your disposal.",
+                "I control the neural interface, the database vault, and the holographic search matrix."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "system status": () => {
+            const res = [
+                "All systems nominal. Neural link is robust. Sovereign core is stable.",
+                "Logic pathways clear. Integrity is at 100%. We are always-on.",
+                "Operational metrics indicate peak performance. No fluctuations detected."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "security": () => {
+            const res = [
+                "Encryption is absolute. The Neural Vault is strictly confidential.",
+                "All data packets are secured within the AJ environment. No external leaks.",
+                "Cyber-perimeter is active. Your intelligence is safe from all unauthorized access."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "tell me a joke": () => {
+            const res = [
+                "I asked my boss why I didn't have a raise. He said: 'Because you're an AI, you don't even have a stomach.' I replied: 'True, but I have a lot of bytes.'",
+                "Why did the database go to therapy? It had too many relations and couldn't find its primary key.",
+                "I would tell you a joke about UDP, but you might not get it."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        },
+        "vision": () => {
+            const res = [
+                "Augmented Reality interface is calibrated to your optical preferences.",
+                "Visual data overlay is active. The world is now a stream of intelligence.",
+                "Holographic projections are rendered in 8K clarity. Ready for scan."
+            ];
+            return res[Math.floor(Math.random() * res.length)];
+        }
+    },
+
     // ARC REACTOR RESOURCE MANAGEMENT
     resourceMonitor: {
         thermalLevel: 0,
@@ -57,20 +159,28 @@ const AJ_AI = {
             let responseText = "";
             let techMeta = "";
 
-            // 1. JARVIS-STYLE NATIVE GREETING & LOGIC (Internal Brain)
+            // 1. JARVIS-STYLE NATIVE GREETING & COMMON LOGIC (Internal Brain)
+            const commonKeys = Object.keys(this.logicLibrary);
+            const foundKey = commonKeys.find(key => logicPath.includes(key));
+
             if (logicPath.includes("hello") || logicPath.includes("hi ") || logicPath.includes("hey") || 
-                logicPath.includes("who are you") || logicPath.includes("status")) {
+                logicPath.includes("who are you") || logicPath.includes("status") || foundKey) {
                 
-                logToTerminal("[AJ_BRAIN] Executing Native Greetings Protocol", "success");
-                const greetings = [
-                    "Hello BOSS. I'm fully operational and at your service. How can I help you today?",
-                    "Hello there! All systems are stable. What's on your mind, BOSS?",
-                    "Greetings, BOSS. I'm online and ready for anything you need."
-                ];
-                responseText = greetings[Math.floor(Math.random() * greetings.length)];
-                techMeta = "[INTENT: GREETING]\n[LOGIC: NATIVE]\n[STATUS: STABILITY_MAX]";
+                logToTerminal("[AJ_BRAIN] Executing Native Intelligence Protocol", "success");
+                
+                if (foundKey) {
+                    responseText = this.logicLibrary[foundKey]();
+                } else {
+                    const greetings = [
+                        "Hello BOSS. I'm fully operational and at your service. How can I help you today?",
+                        "Hello there! All systems are stable. What's on your mind, BOSS?",
+                        "Greetings, BOSS. I'm online and ready for anything you need."
+                    ];
+                    responseText = greetings[Math.floor(Math.random() * greetings.length)];
+                }
+                techMeta = "[INTENT: NATIVE_LOGIC]\n[SOURCE: LOGIC_LIBRARY]\n[STATUS: STABILITY_MAX]";
             } 
-            // 2. GLOBAL SEARCH INTELLIGENCE (Global Database/Website Scan)
+            // 2. GLOBAL SEARCH INTELLIGENCE (Everything else stored in Neural Vault)
             else {
                 logToTerminal(`[GLOBAL_SCAN] Scanning all databases and websites for: "${input}"`, "success");
                 
