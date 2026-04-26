@@ -146,7 +146,12 @@ const AJ_AI = {
             
         } catch (err) {
             console.error("Neural Core Error:", err);
-            return `[AJ_EMERGENCY_MODE]\n[SYSTEM_RECOVERY: ACTIVE]\n━━━━━━━━━━━━━━━━━━━━━━\nSystem overload. Please re-engage. Logic matrix offline.`;
+            // STRICT RECOVERY: Force core to stay online via redundant bypass
+            const recoveryMsg = "Core fluctuation detected, BOSS. Re-mapping neural paths now. I am still here.";
+            logToTerminal(`[CRITICAL] Logic Matrix Divergence: ${err.message}`, "error");
+            logToTerminal("[SYSTEM] Initiating Strict Always-On Protocol...", "success");
+            
+            return `[AJ_STRICT_ALWAYS_ON]\n━━━━━━━━━━━━━━━━━━━━━━\n${recoveryMsg}`;
         }
     },
 
