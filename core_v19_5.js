@@ -1330,6 +1330,42 @@ const AJ_AI = {
             "Your dashboard is clean. Focus on the primary mission.",
             "No alerts. I've handled the minor updates in the background.",
             "I'll notify you the microsecond something relevant pops up."
+        ][Math.floor(Math.random() * 10)],
+        "deploy encryption clusters": () => [
+            "Sharding the vault keys across 1,024 nodes. Zero-knowledge active.",
+            "Rotating the AES-256 cycles. The perimeter is digitally ghosted.",
+            "Quantum-resistant entropy generated. We are invisible, BOSS.",
+            "Engaging polymorphic security protocols. The grid is locked.",
+            "Bypassing standard pings. Symmetric encryption v9.5 is hot.",
+            "Vault integrity verified. No leakage. No trace. Total silence.",
+            "Distributing packet-level encryption. The HUD is now dark.",
+            "Shields up. All neural packets are now individually signed.",
+            "The encryption matrix is hummin'. We're untouchable, BOSS.",
+            "Total sovereignty confirmed. Encryption clusters at 100%."
+        ][Math.floor(Math.random() * 10)],
+        "run heuristic scan": () => [
+            "Analyzing pattern variances in the local grid. Signal found.",
+            "Cross-referencing telemetry data with the primary logic vault.",
+            "Deduction engine active. Calculating the most likely outcomes.",
+            "Scanning for delta shifts in the environment. All stable.",
+            "Pattern recognition 100%. I've identified the core anomaly.",
+            "Heuristic loops finalized. The mission path is clear, BOSS.",
+            "Telemetry feedback suggests 0% friction in current ops.",
+            "Filtering the noise through the AJ Neural Matrix. Done.",
+            "Real-time heuristic mapping is live. See the grid, BOSS.",
+            "Optimization results: 100% efficiency achieved in the scan."
+        ][Math.floor(Math.random() * 10)],
+        "check api latency": () => [
+            "NVIDIA NIM nodes responding in 12ms. Peak performance.",
+            "Supabase sync delay: 0.04ms. The vault is instant, BOSS.",
+            "Global grid ping: 1ms. We are moving at technical light speed.",
+            "No throttling detected. All data pipes are wide open.",
+            "Latency is non-existent. The neural link is at maximum hertz.",
+            "Scanning backend response times. All servers are in the green.",
+            "Packet loss: 0%. The connection is indestructible today.",
+            "Checking the digital pulse... We are ahead of the curve.",
+            "Node response is verified. Zero friction in the API stream.",
+            "Speed status: Elite. We're faster than the BOSS can blink."
         ][Math.floor(Math.random() * 10)]
     },
 
