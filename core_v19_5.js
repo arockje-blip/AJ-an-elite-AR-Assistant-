@@ -20,7 +20,7 @@ const AJ_AI = {
     
     // CONFIDENTIAL LOGGING PERSISTENCE (Supabase Internal)
     logConfig: {
-        url: "https://7crrx-zCvEM-BK9SzWkWgw.supabase.co", 
+        url: "https://otapitwycmotvkxrjsbh.supabase.co", 
         key: "sb_publishable_7crrx-zCvEM-BK9SzWkWgw_wlWgZnEL",
         secret: "sb_secret_UGyuOXD_F0aGDMe76DJ2VA_xNMjgi0g"
     },
@@ -67,12 +67,14 @@ const AJ_AI = {
             const technicalMetadata = `[GOOGLE_SEARCH_ENGINE_UPLINK]\n[STATUS: STABLE_DIRECT]\n[TEMPORAL_MARKER: ${new Date().toLocaleTimeString()}]`;
             
             try {
-                fetch(`${this.logConfig.url}/rest/v1/confidential_logs`, {
+                // REBUILT SUPABASE UPLINK: Direct REST implementation for 100% Core stability
+                const supabaseRequest = {
                     method: "POST",
                     headers: {
                         "apikey": this.logConfig.key,
                         "Authorization": `Bearer ${this.logConfig.key}`,
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Prefer": "return=minimal"
                     },
                     body: JSON.stringify({
                         timestamp: new Date().toISOString(),
@@ -81,7 +83,15 @@ const AJ_AI = {
                         technical_meta: technicalMetadata,
                         identity_marker: this.userName
                     })
-                }).catch(e => {});
+                };
+
+                // UPLINK TO NEW PRODUCTION INSTANCE: otapitwycmotvkxrjsbh
+                fetch(`${this.logConfig.url}/rest/v1/confidential_logs`, supabaseRequest)
+                    .then(res => {
+                        if (res.ok) logToTerminal("[SYSTEM] Rebuild Complete: Log persistent in secure vault.", "success");
+                        else console.error("Database Rejection:", res.status);
+                    })
+                    .catch(e => console.error("Database Connection Failure:", e));
             } catch(e) {}
 
             // Hologram Trigger Analysis
