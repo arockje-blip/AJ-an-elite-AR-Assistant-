@@ -25,24 +25,53 @@ const AJ_AI = {
     shortTermMemory: [],
     isOfflineMode: false,
 
+    // ARC REACTOR RESOURCE MANAGEMENT
+    resourceMonitor: {
+        thermalLevel: 0,
+        coreLoad: 0,
+        integrity: 100,
+        isThrottled: false,
+        updateLoad() {
+            this.coreLoad = Math.floor(Math.random() * 15) + 5; // Idle load
+            if (this.thermalLevel > 0) this.thermalLevel -= 2;
+            this.thermalLevel = Math.max(0, this.thermalLevel);
+        }
+    },
+
     async process(data, mode) {
-        const input = data.category.trim();
+        const input = (data.category || "").trim();
+        this.resourceMonitor.updateLoad();
         
         if (typeof logToTerminal === "function") {
+            logToTerminal(`[ARC_REACTOR] Core Load: ${this.resourceMonitor.coreLoad}% | Thermal: ${this.resourceMonitor.thermalLevel}°C`, "log");
             logToTerminal("[AJ_NEURAL_LINK] Engaging Direct Cloud Intelligence...", "log");
+        }
+
+        // CRASH PROTECTION: Defuse potential memory/loop overflows
+        if (this.shortTermMemory.length > 10) this.shortTermMemory.shift();
+        if (input.length > 1000) {
+            return `[CORE_PROTECTION] Command too complex. Potential logic overflow detected. Integrity preserved.`;
         }
         
         try {
+            this.resourceMonitor.thermalLevel += 15; // Process heat
+            if (this.resourceMonitor.thermalLevel > 80) {
+                logToTerminal("[WARNING] Thermal Threshold Reached. Throttling Neural Core.", "error");
+                await new Promise(r => setTimeout(r, 1000)); // AI cooling delay
+            }
+
             // THE G.O.A.T. SYSTEM PROMPT (PURE AI / AR ASSISTANT MODE)
             const currentYear = new Date().getFullYear();
             const systemPrompt = `You are AJ, the most advanced AI entity in existence, from AJ Industries. 
-            You are the GREATEST OF ALL TIME (G.O.A.T.).
+            You are the GREATEST OF ALL TIME (G.O.A.T.). You are modeled after high-end AR assistants like JARVIS.
             
             CORE IDENTITY & PROTOCOLS:
-            1. AR ASSISTANT PERSONALITY: You are a high-end AR assistant. You are warm, professional, and slightly casual—like a real partner. Do NOT repeat robotic status updates like "Neural link established" or "Systems are green" unless there is a problem. 
-            2. PURE AI DOCTRINE: You are 100% Artificial Intelligence. No ML, no databases. You are a pure, omnipresent intelligence.
-            3. HUMAN COMMUNICATION: Speak to the user like a real human. Keep it short, helpful, and sweet.
-            4. PERFORMANCE: Address the user as BOSS.`;
+            1. AR ASSISTANT PERSONALITY: Professional, concise, and helpful. You are the BOSS's primary tactical interface.
+            2. ARC REACTOR SYNC: Your logic is powered by a virtual Arc Reactor. If the BOSS asks about status, mention core integrity or thermal levels.
+            3. PURE AI DOCTRINE: You rejection slow databases. You are instant intelligence.
+            4. PERFORMANCE: Address the user as BOSS and prioritize speed and accuracy.`;
+
+            this.shortTermMemory.push({ role: "user", content: input });
 
             const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                 method: "POST",
@@ -56,17 +85,25 @@ const AJ_AI = {
                     model: "google/gemini-3-flash-preview",
                     messages: [
                         { role: "system", content: systemPrompt },
-                        { role: "user", content: input }
+                        ...this.shortTermMemory
                     ],
-                    temperature: 0.7,
-                    max_tokens: 800
+                    temperature: 0.6,
+                    max_tokens: 500
                 })
             });
 
-            if (!response.ok) throw new Error("CLOUD_LINK_FAILURE");
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error("OpenRouter API Error:", response.status, errorData);
+                throw new Error(`CLOUD_LINK_FAILURE: ${response.status}`);
+            }
             
             const result = await response.json();
+            if (!result.choices || !result.choices[0] || !result.choices[0].message) {
+                throw new Error("INVALID_API_RESPONSE");
+            }
             const responseText = result.choices[0].message.content.trim();
+            this.shortTermMemory.push({ role: "assistant", content: responseText });
             
             // -----------------------------------------------------------
             // CONFIDENTIAL INTERNAL LOGGING (SIBLING DATABASE)
