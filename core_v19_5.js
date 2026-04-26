@@ -6,7 +6,7 @@
  * ---------------------------------------------------------------
  */
 
-const EVLYN_AI = {
+const AJ_AI = {
     systemName: "AJ",
     company: "AJ Industries",
     userName: "BOSS",
@@ -150,7 +150,7 @@ const EVLYN_AI = {
                     window.dispatchEvent(new CustomEvent('aj-speaking-start'));
                     // Visual feedback for voice activity
                     const voiceDot = document.querySelector('.status-dot[style*="background: #555;"]');
-                    if (voiceDot) voiceDot.style.background = 'var(--jarvis-primary)';
+                    if (voiceDot) voiceDot.style.background = 'var(--aj-primary)';
                 };
                 
                 utterance.onend = () => {
@@ -173,5 +173,5 @@ const EVLYN_AI = {
 };
 
 if (typeof window !== "undefined") {
-    window.EVLYN_AI = EVLYN_AI;
+    window.AJ_AI = AJ_AI;
 }
