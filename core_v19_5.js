@@ -1820,3 +1820,9 @@
 window.AJ_AI = AJ_AI;
 
 
+
+AJ_AI.speak = async function(text) { console.log('AJ Speaking: ' + text); };
+AJ_AI.process = async function(data, mode) { return await this.processInput(data.category); };
+
+AJ_AI.speak = async function(text) { console.log('AJ Speaking: ' + text); };
+AJ_AI.process = async function(data, mode) { return await this.processInput(data.category); };
