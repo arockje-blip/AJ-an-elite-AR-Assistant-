@@ -1822,14 +1822,4 @@ window.AJ_AI = AJ_AI;
 
 
 AJ_AI.speak = async function(text) { console.log('AJ Speaking: ' + text); };
-<<<<<<< HEAD
 AJ_AI.process = async function(data, mode) { return await this.processInput(data.category); };
-
-AJ_AI.speak = async function(text) { console.log('AJ Speaking: ' + text); };
-AJ_AI.process = async function(data, mode) { return await this.processInput(data.category); };
-=======
-AJ_AI.process = async function(data, mode) { return await this.processInput(data.category); };
-
-AJ_AI.speak = async function(text) { console.log('AJ Speaking: ' + text); };
-AJ_AI.process = async function(data, mode) { return await this.processInput(data.category); };
->>>>>>> ab1ce85583d8ea38577351f8f4ac7409a1d0010c
