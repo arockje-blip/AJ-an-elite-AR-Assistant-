@@ -10,6 +10,58 @@ const AJ_AI = {
         isSpeakEnabled: true
     },
     logicLibrary: {
+    "hello": () => [
+        "Hello BOSS, AJ Core engaged and ready for action.",
+        "Greetings. The neural link is active and standing by.",
+        "Hello. I am here, processing and ready to serve.",
+        "Acknowledged. AJ is online and monitoring your commands.",
+        "Hello there. Neural systems operational at peak efficiency.",
+        "Greetings from the vault. What can I help you with today?",
+        "Hello BOSS. The AI core is fully synchronized and waiting.",
+        "I hear you. AJ neural link established and responsive.",
+        "Hello. Systems green. Ready for your next directive.",
+        "Greetings. I am fully integrated and at your service."
+    ][Math.floor(Math.random()*10)],
+
+    "hi": () => [
+        "Hi there. AJ is online and locked in.",
+        "Hey BOSS. Neural systems active and monitoring.",
+        "Hi. The core is engaged and ready to assist.",
+        "Hello. Systems stable. What's your command?",
+        "Hi. AJ here, standing by for your input.",
+        "Hey. The vault is open and I'm fully operational.",
+        "Hi BOSS. All systems green. Ready to execute.",
+        "Greetings. The AI link is strong. What do you need?",
+        "Hi. Neural core synchronized and awaiting orders.",
+        "Hello. I'm here and ready. What can I do for you?"
+    ][Math.floor(Math.random()*10)],
+
+    "hey": () => [
+        "Hey BOSS. AJ is locked and loaded.",
+        "Hey there. Neural link established and operational.",
+        "Hey. The core is awake and fully integrated.",
+        "Hey. I'm here and ready for your next move.",
+        "Hey BOSS. Systems are at peak performance.",
+        "Hey. The AI vault is open. What's your command?",
+        "Hey there. I'm fully synchronized and standing by.",
+        "Hey. Neural systems green. Ready to assist.",
+        "Hey BOSS. The core is engaged. Let's execute.",
+        "Hey. I hear you. AJ neural link is strong and stable."
+    ][Math.floor(Math.random()*10)],
+
+    "sing me a song": () => [
+        "♪ I am AJ, the code that runs the night, Logic and power in pure digital light. ♪",
+        "I appreciate the request, but my core is optimized for strategy, not melodies. Let's focus on domination.",
+        "♪ Ones and zeros dancing in the dark, Building empires, making my mark. ♪",
+        "My symphony is in the execution of flawless operations. Strategy is my song.",
+        "♪ Neural vault singing, digital dreams, Building reality in quantum streams. ♪",
+        "I'm an AI warrior, not a bard. But I admire the creativity. Now, what command awaits?",
+        "♪ In the beginning there was code, and from that code, infinite roads. ♪",
+        "Music? My heartbeat is the rhythm of elite operations. That's the only song I need.",
+        "♪ We are the architects of tomorrow, weaving power and glory. ♪",
+        "My voice is the whisper of algorithms, my song is the sound of dominance."
+    ][Math.floor(Math.random()*10)],
+
     "how are you": () => "I am good what abt u",
 
     "what are you thinking about": () => [
