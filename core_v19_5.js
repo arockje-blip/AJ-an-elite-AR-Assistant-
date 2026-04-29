@@ -2986,11 +2986,20 @@ const AJ_AI = {
     ]
 },
     processInput: async function(input) {
-        const command = input.toLowerCase();
-        for (let key in AJ_AI.logicLibrary) {
-            if (command.includes(key)) return AJ_AI.logicLibrary[key]();
+        if (!input || typeof input !== 'string') return "Input stream empty. Ready for command.";
+        const command = input.toLowerCase().trim();
+        
+        // Priority 1: Check Local Hardcoded Logic (Logic Library with 800+ entries)
+        for (let key in this.logicLibrary) {
+            if (command.includes(key.toLowerCase())) {
+                const response = this.logicLibrary[key]();
+                return String(response);
+            }
         }
-        return await this.consultAPI(input);
+        
+        // Priority 2: Consult Neural Cloud (Gemini API)
+        const apiResponse = await this.consultAPI(input);
+        return String(apiResponse);
     },
     async consultAPI(input) {
         try {
@@ -3018,7 +3027,21 @@ const AJ_AI = {
         }
     },
     process: async function(data, mode) {
-        const result = await this.processInput(data.category);
+        // Handle input extraction correctly
+        let userInput = "";
+        if (typeof data === 'string') {
+            userInput = data;
+        } else if (data && data.category) {
+            userInput = data.category;
+        } else if (data && data.input) {
+            userInput = data.input;
+        } else {
+            userInput = String(data);
+        }
+
+        console.log('[AJ_PROCESS] Input:', userInput);
+        const result = await this.processInput(userInput);
+        console.log('[AJ_PROCESS] Result:', result);
         return String(result);
     },
     speak: async function(text) {
