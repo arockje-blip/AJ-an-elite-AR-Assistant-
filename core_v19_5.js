@@ -6,7 +6,7 @@ const AJ_AI = {
         systemName: "AJ",
         company: "AJ Industries",
         userName: "BOSS",
-        motto: "NO DATABASE | NO ML | PURE AI",
+        motto: "NO DATABASE | LESS ML | PURE AI",
         isSpeakEnabled: true
     },
     logicLibrary: {
