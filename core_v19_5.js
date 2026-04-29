@@ -2996,7 +2996,7 @@ const AJ_AI = {
         if (!input || typeof input !== 'string') return "Input stream empty. Ready for command.";
         const command = input.toLowerCase().trim();
         
-        // Priority 1: Check Local Hardcoded Logic (Logic Library with 800+ entries)
+        // Priority 1: Check Local Hardcoded Logic Database (Case-Insensitive, 800+ prompts with 10 randomized answers each)
         for (let key in this.logicLibrary) {
             const normalizedKey = key.toLowerCase().trim();
             if (command.includes(normalizedKey) || normalizedKey.includes(command)) {
@@ -3005,8 +3005,34 @@ const AJ_AI = {
             }
         }
         
-        // No match found - return local fallback (NO API CALLS)
-        return "Query not in local database. Try: how are you, what are you thinking about, tell me about yourself, or check help menu.";
+        // Priority 2: Use Full ML Logic - Consult Gemini API for unmatched queries
+        const apiResponse = await this.consultAPI(input);
+        return String(apiResponse);
+    },
+    async consultAPI(input) {
+        try {
+            const response = await fetch(`${this.config.apiURL}?key=${this.config.apiKey}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: `System: You are AJ, an elite AR Assistant. Be brief. Token conservation is priority. No fillers. Current context: User is asking: ${input}`
+                        }]
+                    }]
+                })
+            });
+            const data = await response.json();
+            if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+                return data.candidates[0].content.parts[0].text;
+            }
+            return "Neural link latency detected. Local core active.";
+        } catch (e) { 
+            console.error("API Error:", e);
+            return "API offline. Local core active."; 
+        }
     },
     process: async function(data, mode) {
         // Handle input extraction correctly
