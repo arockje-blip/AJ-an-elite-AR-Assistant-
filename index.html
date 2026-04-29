@@ -517,14 +517,34 @@
             left: 30px;
             top: 50%;
             transform: translateY(-50%);
-            width: 280px;
+            width: 320px;
         }
         
         .panel-right {
             right: 30px;
             top: 50%;
             transform: translateY(-50%);
-            width: 280px;
+            width: 320px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .terminal-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 250px;
+        }
+
+        .answer-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 250px;
+            border-top: 1px solid rgba(0, 242, 255, 0.2);
+            padding-top: 15px;
         }
         
         .panel-title {
@@ -602,14 +622,50 @@
             transform: scale(0.98);
         }
         
+        /* RIGHT OUTPUT PANEL */
+        .panel-right {
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 320px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(1, 4, 9, 0.4);
+        }
+
+        .terminal-container, .answer-container {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+        }
+
+        .answer-box {
+            flex: 1;
+            overflow-y: auto;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--aj-accent);
+            padding: 10px;
+            background: rgba(0, 242, 255, 0.03);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 0 0 5px rgba(230, 241, 255, 0.3);
+        }
+
+        .answer-box::-webkit-scrollbar { width: 4px; }
+        .answer-box::-webkit-scrollbar-thumb { background: rgba(0, 242, 255, 0.2); }
+
         /* TERMINAL OUTPUT */
         .terminal-output {
-            max-height: 150px;
+            flex: 1;
             overflow-y: auto;
             font-size: 10px;
             font-family: 'Courier New', monospace;
             color: var(--aj-primary);
             line-height: 1.6;
+            padding: 5px;
         }
         
         .terminal-output::-webkit-scrollbar {
@@ -767,13 +823,22 @@
         
         <!-- RIGHT OUTPUT PANEL -->
         <div class="command-panel panel-right">
-            <div class="panel-title">⧉ NEURAL LOG STREAM ⧉</div>
-            <div id="neural-terminal" class="terminal-output">
-                <div class="log-entry">
-                    <span class="log-time">[BOOT_SEQUENCE]</span> NEURAL LINK INITIALIZED
+            <div class="terminal-container">
+                <div class="panel-title">⧉ NEURAL LOG STREAM ⧉</div>
+                <div id="neural-terminal" class="terminal-output">
+                    <div class="log-entry">
+                        <span class="log-time">[BOOT_SEQUENCE]</span> NEURAL LINK INITIALIZED
+                    </div>
+                    <div class="log-entry">
+                        <span class="log-time">[AWAITING]</span> Input command...
+                    </div>
                 </div>
-                <div class="log-entry">
-                    <span class="log-time">[AWAITING]</span> Input command...
+            </div>
+
+            <div class="answer-container">
+                <div class="panel-title">⧈ CORE INTELLIGENCE OUTPUT ⧈</div>
+                <div id="ai-answer-box" class="answer-box">
+                    <span style="opacity: 0.4;">Awaiting neural processing...</span>
                 </div>
             </div>
         </div>
@@ -1474,10 +1539,15 @@
                 
                 arcReactor.classList.remove('listening');
                 
-                // CRITICAL FIX: Read the FULL response, not just the last line
-                // We keep the technical headers for the terminal but speech only gets the cleaned message
-                const fullResponse = responseData;
-                const lines = fullResponse.split('\n');
+                // responseData is now the raw answer
+                const actualAnswer = responseData;
+
+                // Update the dedicated Answer Box
+                const answerBox = document.getElementById('ai-answer-box');
+                if (answerBox) {
+                    answerBox.innerHTML = `<span class="log-time" style="color: var(--aj-accent); opacity: 0.6; font-size: 10px;">[${new Date().toLocaleTimeString('en-US', { hour12: false })}]</span><br>${actualAnswer}`;
+                    answerBox.scrollTop = answerBox.scrollHeight;
+                }
 
                 logToTerminal('[OUTPUT_READY]', 'success');
                 
@@ -1486,9 +1556,10 @@
                 document.body.classList.add('system-vibrant');
                 
                 // PASS ENTIRE TEXT FOR SPEECH (NO TRUNCATION)
-                const speechPromise = window.AJ_AI.speak(fullResponse);
+                const speechPromise = window.AJ_AI.speak(actualAnswer);
 
-                async function typeLine(text) {
+                // Type only the actual answer into the log stream too
+                await typeLine(actualAnswer);
                     return new Promise(resolve => {
                         let i = 0;
                         const prefix = '� ';

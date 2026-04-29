@@ -2998,7 +2998,6 @@ const AJ_AI = {
         for (let key in this.logicLibrary) {
             if (command.includes(key.toLowerCase())) {
                 const response = this.logicLibrary[key]();
-                // Return clean response for voice/UI processing
                 return String(response);
             }
         }
@@ -3049,9 +3048,8 @@ const AJ_AI = {
         const result = await this.processInput(userInput);
         console.log('[AJ_PROCESS] Result:', result);
         
-        // Prepend the system status messages for the UI log stream
-        const logStreamOutput = `[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\n${result}`;
-        return logStreamOutput;
+        // Return only the raw result; index.html will handle the log stream wrapping
+        return String(result);
     },
     speak: async function(text) {
         // text coming in from 'process' will have the log markers [NEURAL_LINK]...
