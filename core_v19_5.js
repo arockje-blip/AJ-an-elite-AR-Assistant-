@@ -2993,7 +2993,7 @@ const AJ_AI = {
         for (let key in this.logicLibrary) {
             if (command.includes(key.toLowerCase())) {
                 const response = this.logicLibrary[key]();
-                return String(response);
+                return `[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\n${String(response)}`;
             }
         }
         
@@ -3018,12 +3018,14 @@ const AJ_AI = {
             });
             const data = await response.json();
             if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
-                return data.candidates[0].content.parts[0].text;
+                const aiResponse = data.candidates[0].content.parts[0].text;
+                // Prepend the system status messages before the actual answer
+                return `[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\n${aiResponse}`;
             }
-            return "Neural link latency detected. Local core active.";
+            return "[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\nNeural link latency detected. Local core active.";
         } catch (e) { 
             console.error("API Error:", e);
-            return "API offline. Local core active."; 
+            return "[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\nAPI offline. Local core active."; 
         }
     },
     process: async function(data, mode) {
