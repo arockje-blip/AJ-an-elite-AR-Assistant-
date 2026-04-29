@@ -2991,6 +2991,18 @@ const AJ_AI = {
             if (command.includes(key)) return AJ_AI.logicLibrary[key]();
         }
         return "Command not recognized. Accessing neural cloud for further analysis...";
+    },
+    process: async function(data, mode) {
+        return this.processInput(data.category);
+    },
+    speak: async function(text) {
+        console.log('AJ Speaking: ' + text);
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 1.0;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
     }
 };
 
