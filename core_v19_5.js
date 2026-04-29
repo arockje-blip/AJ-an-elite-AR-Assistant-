@@ -2,7 +2,12 @@ const AJ_AI = {
     config: {
         model: "gemini-1.5-flash",
         apiURL: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
-        apiKey: "AIzaSyD8BORb5gxj4jr0TUzXV50YKT9A2jFwgZE"
+        apiKey: "AIzaSyD8BORb5gxj4jr0TUzXV50YKT9A2jFwgZE",
+        systemName: "AJ",
+        company: "AJ Industries",
+        userName: "BOSS",
+        motto: "NO DATABASE | NO ML | PURE AI",
+        isSpeakEnabled: true
     },
     logicLibrary: {
     "what are you thinking about": () => [
@@ -2993,7 +2998,8 @@ const AJ_AI = {
         for (let key in this.logicLibrary) {
             if (command.includes(key.toLowerCase())) {
                 const response = this.logicLibrary[key]();
-                return `[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\n${String(response)}`;
+                // Return clean response for voice/UI processing
+                return String(response);
             }
         }
         
@@ -3018,14 +3024,12 @@ const AJ_AI = {
             });
             const data = await response.json();
             if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
-                const aiResponse = data.candidates[0].content.parts[0].text;
-                // Prepend the system status messages before the actual answer
-                return `[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\n${aiResponse}`;
+                return data.candidates[0].content.parts[0].text;
             }
-            return "[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\nNeural link latency detected. Local core active.";
+            return "Neural link latency detected. Local core active.";
         } catch (e) { 
             console.error("API Error:", e);
-            return "[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\nAPI offline. Local core active."; 
+            return "API offline. Local core active."; 
         }
     },
     process: async function(data, mode) {
@@ -3044,14 +3048,21 @@ const AJ_AI = {
         console.log('[AJ_PROCESS] Input:', userInput);
         const result = await this.processInput(userInput);
         console.log('[AJ_PROCESS] Result:', result);
-        return String(result);
+        
+        // Prepend the system status messages for the UI log stream
+        const logStreamOutput = `[NEURAL_LINK] Engaging core...\n[PROCESSING] Analyzing command structure...\n[OUTPUT_READY]\n${result}`;
+        return logStreamOutput;
     },
     speak: async function(text) {
-        console.log('AJ Speaking: ' + text);
+        // text coming in from 'process' will have the log markers [NEURAL_LINK]...
+        // so we strip them for the voice synthesis
+        const cleanText = text.replace(/\[.*?\]/g, '').trim();
+        
+        console.log('AJ Speaking: ' + cleanText);
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.rate = 1.0;
+            const utterance = new SpeechSynthesisUtterance(cleanText);
+            utterance.rate = 1.2; 
             utterance.pitch = 1.0;
             window.speechSynthesis.speak(utterance);
         }
