@@ -10,6 +10,8 @@ const AJ_AI = {
         isSpeakEnabled: true
     },
     logicLibrary: {
+    "how are you": () => "I am good what abt u",
+
     "what are you thinking about": () => [
         "Processing a million permutations of our next strategic move across the global grid.",
         "Analyzing the current state of our sovereignty and the efficiency of your digital empire.",
@@ -2996,7 +2998,8 @@ const AJ_AI = {
         
         // Priority 1: Check Local Hardcoded Logic (Logic Library with 800+ entries)
         for (let key in this.logicLibrary) {
-            if (command.includes(key.toLowerCase())) {
+            const normalizedKey = key.toLowerCase().trim();
+            if (command.includes(normalizedKey) || normalizedKey.includes(command)) {
                 const response = this.logicLibrary[key]();
                 return String(response);
             }
