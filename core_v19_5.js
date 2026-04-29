@@ -1,8 +1,8 @@
 const AJ_AI = {
     config: {
-        model: "google/gemini-2.0-flash-001",
-        apiURL: "https://openrouter.ai/api/v1/chat/completions",
-        apiKey: "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"
+        model: "gemini-1.5-flash",
+        apiURL: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
+        apiKey: "AIzaSyD8BORb5gxj4jr0TUzXV50YKT9A2jFwgZE"
     },
     logicLibrary: {
     "what are you thinking about": () => [
@@ -2985,19 +2985,46 @@ const AJ_AI = {
         "Confirmed. Your words are code and your commands are laws. Carry on with the win, boss."
     ]
 },
-    processInput: (input) => {
+    processInput: async function(input) {
         const command = input.toLowerCase();
         for (let key in AJ_AI.logicLibrary) {
             if (command.includes(key)) return AJ_AI.logicLibrary[key]();
         }
-        return "Command not recognized. Accessing neural cloud for further analysis...";
+        return await this.consultAPI(input);
+    },
+    async consultAPI(input) {
+        try {
+            const response = await fetch(`${this.config.apiURL}?key=${this.config.apiKey}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: `System: You are AJ, an elite AR Assistant. Be brief. Token conservation is priority. No fillers. Current context: User is asking: ${input}`
+                        }]
+                    }]
+                })
+            });
+            const data = await response.json();
+            if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+                return data.candidates[0].content.parts[0].text;
+            }
+            return "Neural link latency detected. Local core active.";
+        } catch (e) { 
+            console.error("API Error:", e);
+            return "API offline. Local core active."; 
+        }
     },
     process: async function(data, mode) {
-        return this.processInput(data.category);
+        const result = await this.processInput(data.category);
+        return String(result);
     },
     speak: async function(text) {
         console.log('AJ Speaking: ' + text);
         if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.rate = 1.0;
             utterance.pitch = 1.0;
