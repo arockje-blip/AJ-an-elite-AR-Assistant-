@@ -3005,34 +3005,8 @@ const AJ_AI = {
             }
         }
         
-        // Priority 2: Consult Neural Cloud (Gemini API)
-        const apiResponse = await this.consultAPI(input);
-        return String(apiResponse);
-    },
-    async consultAPI(input) {
-        try {
-            const response = await fetch(`${this.config.apiURL}?key=${this.config.apiKey}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: `System: You are AJ, an elite AR Assistant. Be brief. Token conservation is priority. No fillers. Current context: User is asking: ${input}`
-                        }]
-                    }]
-                })
-            });
-            const data = await response.json();
-            if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
-                return data.candidates[0].content.parts[0].text;
-            }
-            return "Neural link latency detected. Local core active.";
-        } catch (e) { 
-            console.error("API Error:", e);
-            return "API offline. Local core active."; 
-        }
+        // No match found - return local fallback (NO API CALLS)
+        return "Query not in local database. Try: how are you, what are you thinking about, tell me about yourself, or check help menu.";
     },
     process: async function(data, mode) {
         // Handle input extraction correctly
